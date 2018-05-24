@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+{% block body %}
+<br></br>
+<div class="container">
+   <div class="row">
+        <div class="col-lg-12">
+               <div class="col-lg-4">
+											{% for title, link in cricinfo_posts.items() %}
+													<a class="reddit-boxes nounderline list-group-item list-group-item-action" href="{{ link }}">
+															{{ title }} <img class="team-logo" src="/static/images/espncricinfo.png">
+
+													</a>
+													<br>
+											{% endfor %}
+									</div>
+                  <div class="col-lg-4">
+											{% for title, link in cricbuzz_posts.items() %}
+													<a class="reddit-boxes nounderline list-group-item list-group-item-action" href="{{ link }}">
+															{{ title }} <img class="team-logo" src="/static/images/cricbuzz.png">
+													</a>
+													<br>
+											{% endfor %}
+									</div>
+                <div class="col-lg-4">
+											{% for title, link in yahoonews_posts.items() %}
+													<a class="reddit-boxes nounderline list-group-item list-group-item-action" href="{{ link }}">
+															{{ title }} <img class="team-logo" src="/static/images/yahoocricnews.png">
+													</a>
+													<br>
+											{% endfor %}
+									</div>
+                </div>
+              </div>
+            </div>
+
+{% endblock %}

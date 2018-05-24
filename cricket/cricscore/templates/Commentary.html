@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+{% block body %}
+<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+<div id="content">{{ index2 }}</div> {# this is the original system_info passed in from the root view #}
+
+<script>
+setInterval(function(){ // load the data from your endpoint into the div
+    $("#content").load("/sys_info.json")
+},1000)
+</script>
+    <div class="container">
+        <br>
+
+
+            <!-- Table -->
+            <br></br>
+          <table class="standings-datatable table table-sm">
+            <thead class="thead-inverse">
+        			<tr>
+        				  <th class="bg-primary text-sm-center">Match Type</th>
+        				  <th class="bg-primary text-sm-center">Teams</th>
+        				  <th class="bg-primary text-sm-center">Series</th>
+                  <th class="bg-primary text-sm-center">Status</th>
+                  <th class="bg-primary text-sm-center">Commentary</th>
+        			</tr>
+            </thead>
+            <tr>
+            <tbody>
+              <thead class="thead-inverse">
+                <tr>
+                     <th class="bg-dark "></th>
+                     <th class="bg-dark "></th>
+                     <th class="bg-dark "></th>
+                     <th class="bg-dark "></th>
+                     <th class="bg-dark "></th>
+                </tr>
+               </thead>
+
+        		{% for game in commentary1 %}
+        		<tr>
+                  <td >{{ game['matchtype2'] }}</td>
+        				  <td>{{ game['teams2'] }}</td>
+                  <td>{{ game['matchseries'] }}</td>
+                  <td>{{ game['status2'] }}</td>
+                  <td>{{ game['commentary2'] }}</td>
+        		</tr>
+            {% endfor %}
+        		</tbody>
+        	</table>
+
+
+
+{% endblock %}

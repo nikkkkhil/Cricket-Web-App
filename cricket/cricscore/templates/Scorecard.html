@@ -1,0 +1,574 @@
+
+{% extends "layout.html" %}
+{% block body %}
+<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+<div id="content">{{ index3 }}</div> {# this is the original system_info passed in from the root view #}
+
+<script>
+setInterval(function(){ // load the data from your endpoint into the div
+    $("#content").load("/sys_info.json")
+},1000)
+</script>
+
+		<div class="container">
+				<br>
+
+						<br></br>
+						<!-- Table -->
+						<!-- Table -->
+						{% if scoreecard%}
+						{% for key in scoreecard%}
+						{% if key['1st-innings-batteam'] %}
+					           <table class="standings-datatable table table-sm">
+					             <thead class="thead-inverse">
+												<tr>
+													{% if key['1st-innings-batteam'] %}
+													  <th class="bg-primary text-lg-left">{{key['1st-innings-batteam']}} 1st Innings</th>
+														<th class="bg-primary text-lg-left"></th>
+														<th class="bg-primary text-lg-left"></th>
+														<th class="bg-primary text-lg-left"></th>
+														<th class="bg-primary text-lg-left"></th>
+														<th class="bg-primary text-lg-right">{{key['1st-innings-runs']}}-{{key['1st-innings-wickets']}} [{{key['1st-innings-overs']}}]</th>
+
+												</tr>
+												</thead>
+												<tr>
+												<tbody>
+											<thead class="thead-inverse">
+					         			<tr>
+
+					                   <th class="bg-dark text-lg-left">Batsman</th>
+														 <th class="bg-dark text-lg-center">Dismissal</th>
+														 <th class="bg-dark text-lg-left">Runs</th>
+														 <th class="bg-dark text-lg-left">Balls</th>
+														 <th class="bg-dark text-lg-left">Fours</th>
+														 <th class="bg-dark text-lg-left">Sixes</th>
+
+
+
+
+					         			</tr>
+					             </thead>
+
+														 <tr>
+
+														 <td >{{ key['name70']}}</td>
+														 <td>{{ key['dismissal70'] }}</td>
+														 <td>{{ key['runs70'] }}</td>
+														 <td>{{ key['balls70'] }}</td>
+														 <td>{{ key['fours70'] }}</td>
+														 <td>{{ key['six70'] }}</td>
+
+														 </tr>
+					         					 <tr>
+
+					                   <td >{{ key['name71']}}</td>
+					         				   <td>{{ key['dismissal71'] }}</td>
+					                   <td>{{ key['runs71'] }}</td>
+                             <td>{{ key['balls71'] }}</td>
+														 <td>{{ key['fours71'] }}</td>
+														 <td>{{ key['six71'] }}</td>
+
+														 </tr>
+
+														 <tr >
+
+					                   <td >{{ key['name72'] }}</td>
+					         				   <td>{{ key['dismissal72'] }}</td>
+					                   <td>{{ key['runs72'] }}</td>
+                             <td>{{ key['balls72'] }}</td>
+														 <td>{{ key['fours72'] }}</td>
+														 <td>{{ key['six72'] }}</td>
+														 </tr>
+														 <tr >
+
+					                   <td >{{ key['name73'] }}</td>
+					         				   <td>{{ key['dismissal73'] }}</td>
+					                   <td>{{ key['runs73'] }}</td>
+                             <td>{{ key['balls73'] }}</td>
+														 <td>{{ key['fours73'] }}</td>
+														 <td>{{ key['six73'] }}</td>
+														 </tr>
+														 <tr >
+
+					                   <td >{{ key['name74'] }}</td>
+					         				   <td>{{ key['dismissal74'] }}</td>
+					                   <td>{{ key['runs74'] }}</td>
+                             <td>{{ key['balls74'] }}</td>
+														 <td>{{ key['fours74'] }}</td>
+														 <td>{{ key['six74'] }}</td>
+														 </tr>
+														 <tr >
+
+					                   <td >{{ key['name75'] }}</td>
+					         				   <td>{{ key['dismissal75'] }}</td>
+					                   <td>{{ key['runs75'] }}</td>
+                             <td>{{ key['balls75'] }}</td>
+														 <td>{{ key['fours75'] }}</td>
+														 <td>{{ key['six75'] }}</td>
+														 </tr>
+														 <tr >
+
+					                   <td >{{ key['name76'] }}</td>
+					         				   <td>{{ key['dismissal76'] }}</td>
+					                   <td>{{ key['runs76'] }}</td>
+                             <td>{{ key['balls76'] }}</td>
+														 <td>{{ key['fours76'] }}</td>
+														 <td>{{ key['six76'] }}</td>
+														 </tr>
+														 <tr >
+
+					                   <td >{{ key['name77'] }}</td>
+					         				   <td>{{ key['dismissal77'] }}</td>
+					                   <td>{{ key['runs77'] }}</td>
+                             <td>{{ key['balls77'] }}</td>
+														 <td>{{ key['fours77'] }}</td>
+														 <td>{{ key['six77'] }}</td>
+														 </tr>
+														 <tr >
+
+					                   <td >{{ key['name78'] }}</td>
+					         				   <td>{{ key['dismissal78'] }}</td>
+					                   <td>{{ key['runs78'] }}</td>
+                             <td>{{ key['balls78'] }}</td>
+														 <td>{{ key['fours78'] }}</td>
+														 <td>{{ key['six78'] }}</td>
+														 </tr>
+														 <tr >
+
+					                   <td >{{ key['name79'] }}</td>
+					         				   <td>{{ key['dismissal79'] }}</td>
+					                   <td>{{ key['runs79'] }}</td>
+                             <td>{{ key['balls79'] }}</td>
+														 <td>{{ key['fours79'] }}</td>
+														 <td>{{ key['six79'] }}</td>
+														 </tr>
+														 <tr >
+
+					                   <td >{{ key['name80'] }}</td>
+					         				   <td>{{ key['dismissal80'] }}</td>
+					                   <td>{{ key['runs80'] }}</td>
+                             <td>{{ key['balls80'] }}</td>
+														 <td>{{ key['fours80'] }}</td>
+														 <td>{{ key['six80'] }}</td>
+														 </tr>
+														 <tr >
+
+															 {% endif %}
+															 {% endif %}
+
+
+														 </tr>
+													 </tr>
+					         		</tbody>
+					         	</table>
+										{% if key['1st-innings-bowlteam'] %}
+										<table class="standings-datatable table table-sm">
+											<thead class="thead-inverse">
+											 <tr>
+												 {% if key['1st-innings-bowlteam'] %}
+													 <th class="bg-primary text-lg-left">{{key['1st-innings-bowlteam']}} 1st Innings </th>
+													 <th class="bg-primary text-lg-left"></th>
+													 <th class="bg-primary text-lg-left"></th>
+													 <th class="bg-primary text-lg-left"></th>
+													 <th class="bg-primary text-lg-left"></th>
+													 <th class="bg-primary text-lg-right"></th>
+											 </tr>
+											 </thead>
+											 <tr>
+											 <tbody>
+										 <thead class="thead-inverse">
+											 <tr>
+
+														<th class="bg-dark text-lg-left">Bowler</th>
+														<th class="bg-dark text-lg-center"></th>
+														<th class="bg-dark text-lg-left"></th>
+														<th class="bg-dark text-lg-left">Overs</th>
+														<th class="bg-dark text-lg-left">Runs</th>
+														<th class="bg-dark text-lg-left">Wickets</th>
+
+
+
+											 </tr>
+											</thead>
+														<tr>
+															<td >{{ key['name50']}}</td>
+											 				<td >{{ key['']}}</td>
+											 				<td >{{ key['']}}</td>
+											 				<td>{{ key['overs50'] }}</td>
+											 				<td>{{ key['runs50'] }}</td>
+											 				<td>{{ key['wickets50'] }}</td>
+											 				</tr>
+											 				<tr>
+											 				<td >{{ key['name51']}}</td>
+											 				<td >{{ key['']}}</td>
+											 				<td >{{ key['']}}</td>
+											 				<td>{{ key['overs51'] }}</td>
+											 				<td>{{ key['runs51'] }}</td>
+											 				<td>{{ key['wickets51'] }}</td>
+											 				</tr>
+											 				<tr>
+											 				<td >{{ key['name52']}}</td>
+											 				<td >{{ key['']}}</td>
+											 				<td >{{ key['']}}</td>
+											 				<td>{{ key['overs52'] }}</td>
+											 				<td>{{ key['runs52'] }}</td>
+											 				<td>{{ key['wickets52'] }}</td>
+											 				</tr>
+											 				<tr>
+											 				<td >{{ key['name53']}}</td>
+											 				<td >{{ key['']}}</td>
+											 				<td >{{ key['']}}</td>
+											 				<td>{{ key['overs53'] }}</td>
+											 				<td>{{ key['runs53'] }}</td>
+											 				<td>{{ key['wickets53'] }}</td>
+											 				</tr>
+											 				<tr>
+											 				<td >{{ key['name54']}}</td>
+											 				<td >{{ key['']}}</td>
+											 				<td >{{ key['']}}</td>
+											 				<td>{{ key['overs54'] }}</td>
+											 				<td>{{ key['runs54'] }}</td>
+											 				<td>{{ key['wickets54'] }}</td>
+											 				</tr>
+											 				<tr>
+											 				<td >{{ key['name55']}}</td>
+											 				<td >{{ key['']}}</td>
+											 				<td >{{ key['']}}</td>
+											 				<td>{{ key['overs55'] }}</td>
+											 				<td>{{ key['runs55'] }}</td>
+											 				<td>{{ key['wickets55'] }}</td>
+											 				</tr>
+											 				<tr>
+											 				<td >{{ key['name56']}}</td>
+											 				<td >{{ key['']}}</td>
+											 				<td >{{ key['']}}</td>
+											 				<td>{{ key['overs56'] }}</td>
+											 				<td>{{ key['runs56'] }}</td>
+											 				<td>{{ key['wickets56'] }}</td>
+											 				</tr>
+											 				<tr>
+											 				<td >{{ key['name57']}}</td>
+											 				<td >{{ key['']}}</td>
+											 				<td >{{ key['']}}</td>
+											 				<td>{{ key['overs57'] }}</td>
+											 				<td>{{ key['runs57'] }}</td>
+											 				<td>{{ key['wickets57'] }}</td>
+											 				</tr>
+											 				<tr>
+											 				<td >{{ key['name58']}}</td>
+											 				<td >{{ key['']}}</td>
+											 				<td >{{ key['']}}</td>
+											 				<td>{{ key['overs58'] }}</td>
+											 				<td>{{ key['runs58'] }}</td>
+											 				<td>{{ key['wickets58'] }}</td>
+											 				</tr>
+											 				<tr>
+											 				<td >{{ key['name59']}}</td>
+											 				<td >{{ key['']}}</td>
+											 				<td >{{ key['']}}</td>
+											 				<td>{{ key['overs59'] }}</td>
+											 				<td>{{ key['runs59'] }}</td>
+											 				<td>{{ key['wickets59'] }}</td>
+											 				</tr>
+											 				<tr>
+											 				<td >{{ key['name60']}}</td>
+											 				<td >{{ key['']}}</td>
+											 				<td >{{ key['']}}</td>
+											 				<td>{{ key['overs60'] }}</td>
+											 				<td>{{ key['runs60'] }}</td>
+											 				<td>{{ key['wickets60'] }}</td>
+											 				</tr>
+
+															{% endif %}
+															{% endif %}
+
+											 			</tr>
+													</tr>
+										 </tbody>
+										</table>
+										<table class="standings-datatable table table-sm">
+									 	 <thead class="thead-inverse">
+									 		<tr>
+												{% if key['2nd-innings-batteam'] %}
+									 				<th class="bg-primary text-lg-left">{{key['2nd-innings-batteam']}}  Innings</th>
+									 				<th class="bg-primary text-lg-center"></th>
+									 				<th class="bg-primary text-lg-left"></th>
+									 				<th class="bg-primary text-lg-left"></th>
+									 				<th class="bg-primary text-lg-left"></th>
+									 				<th class="bg-primary text-lg-right">{{key['2nd-innings-runs']}}-{{key['2nd-innings-wickets']}} [{{key['2nd-innings-overs']}}]</th>
+									 		</tr>
+									 		</thead>
+									 		<tr>
+									 		<tbody>
+									 	<thead class="thead-inverse">
+									 		<tr>
+
+									 				 <th class="bg-dark text-lg-left">Batsman</th>
+									 				 <th class="bg-dark text-lg-center">Dismissal</th>
+									 				 <th class="bg-dark text-lg-left">Runs</th>
+									 				 <th class="bg-dark text-lg-left">Balls</th>
+									 				 <th class="bg-dark text-lg-left">Fours</th>
+									 				 <th class="bg-dark text-lg-left">Sixes</th>
+
+
+
+									 		</tr>
+									 	 </thead>
+									 				 <tr>
+
+									 				 <td >{{ key['name30']}}</td>
+									 				 <td>{{ key['dismissal30'] }}</td>
+									 				 <td>{{ key['runs30'] }}</td>
+									 				 <td>{{ key['balls30'] }}</td>
+									 				 <td>{{ key['fours30'] }}</td>
+									 				 <td>{{ key['six30'] }}</td>
+
+									 				 </tr>
+									 				 <tr>
+
+									 				 <td >{{ key['name31']}}</td>
+									 				 <td>{{ key['dismissal31'] }}</td>
+									 				 <td>{{ key['runs31'] }}</td>
+									 				 <td>{{ key['balls31'] }}</td>
+									 				 <td>{{ key['fours31'] }}</td>
+									 				 <td>{{ key['six31'] }}</td>
+
+									 				 </tr>
+
+									 				 <tr >
+
+									 				 <td >{{ key['name32'] }}</td>
+									 				 <td>{{ key['dismissal32'] }}</td>
+									 				 <td>{{ key['runs32'] }}</td>
+									 				 <td>{{ key['balls32'] }}</td>
+									 				 <td>{{ key['fours32'] }}</td>
+									 				 <td>{{ key['six32'] }}</td>
+									 				 </tr>
+									 				 <tr >
+
+									 				 <td >{{ key['name33'] }}</td>
+									 				 <td>{{ key['dismissal33'] }}</td>
+									 				 <td>{{ key['runs33'] }}</td>
+									 				 <td>{{ key['balls33'] }}</td>
+									 				 <td>{{ key['fours33'] }}</td>
+									 				 <td>{{ key['six33'] }}</td>
+									 				 </tr>
+									 				 <tr >
+
+									 				 <td >{{ key['name34'] }}</td>
+									 				 <td>{{ key['dismissal34'] }}</td>
+									 				 <td>{{ key['runs34'] }}</td>
+									 				 <td>{{ key['balls34'] }}</td>
+									 				 <td>{{ key['fours34'] }}</td>
+									 				 <td>{{ key['six34'] }}</td>
+									 				 </tr>
+									 				 <tr >
+
+									 				 <td >{{ key['name35'] }}</td>
+									 				 <td>{{ key['dismissal35'] }}</td>
+									 				 <td>{{ key['runs35'] }}</td>
+									 				 <td>{{ key['balls35'] }}</td>
+									 				 <td>{{ key['fours35'] }}</td>
+									 				 <td>{{ key['six35'] }}</td>
+									 				 </tr>
+									 				 <tr >
+
+									 				 <td >{{ key['name36'] }}</td>
+									 				 <td>{{ key['dismissal36'] }}</td>
+									 				 <td>{{ key['runs36'] }}</td>
+									 				 <td>{{ key['balls36'] }}</td>
+									 				 <td>{{ key['fours36'] }}</td>
+									 				 <td>{{ key['six36'] }}</td>
+									 				 </tr>
+									 				 <tr >
+
+									 				 <td >{{ key['name37'] }}</td>
+									 				 <td>{{ key['dismissal37'] }}</td>
+									 				 <td>{{ key['runs37'] }}</td>
+									 				 <td>{{ key['balls37'] }}</td>
+									 				 <td>{{ key['fours37'] }}</td>
+									 				 <td>{{ key['six37'] }}</td>
+									 				 </tr>
+									 				 <tr >
+
+									 				 <td >{{ key['name38'] }}</td>
+									 				 <td>{{ key['dismissal38'] }}</td>
+									 				 <td>{{ key['runs38'] }}</td>
+									 				 <td>{{ key['balls38'] }}</td>
+									 				 <td>{{ key['fours38'] }}</td>
+									 				 <td>{{ key['six38'] }}</td>
+									 				 </tr>
+									 				 <tr >
+
+									 				 <td >{{ key['name39'] }}</td>
+									 				 <td>{{ key['dismissal39'] }}</td>
+									 				 <td>{{ key['runs39'] }}</td>
+									 				 <td>{{ key['balls39'] }}</td>
+									 				 <td>{{ key['fours39'] }}</td>
+									 				 <td>{{ key['six39'] }}</td>
+									 				 </tr>
+									 				 <tr >
+
+									 				 <td >{{ key['name40'] }}</td>
+									 				 <td>{{ key['dismissal40'] }}</td>
+									 				 <td>{{ key['runs40'] }}</td>
+									 				 <td>{{ key['balls40'] }}</td>
+									 				 <td>{{ key['fours40'] }}</td>
+									 				 <td>{{ key['six40'] }}</td>
+									 				 </tr>
+									 				 <tr >
+{% endif %}
+									 				 </tr>
+									 			 </tr>
+									 	</tbody>
+									 </table>
+									 <table class="standings-datatable table table-sm">
+									 	<thead class="thead-inverse">
+									 	 <tr>
+											 {% if key['2nd-innings-bowlteam'] %}
+									 			 <th class="bg-primary text-lg-left">{{key['2nd-innings-bowlteam']}}  Innings </th>
+									 			 <th class="bg-primary text-lg-left"></th>
+									 			 <th class="bg-primary text-lg-left"></th>
+									 			 <th class="bg-primary text-lg-left"></th>
+									 			 <th class="bg-primary text-lg-left"></th>
+									 			 <th class="bg-primary text-lg-right"></th>
+									 	 </tr>
+									 	 </thead>
+									 	 <tr>
+									 	 <tbody>
+									  <thead class="thead-inverse">
+									 	 <tr>
+
+									 				<th class="bg-dark text-lg-left">Bowler</th>
+									 				<th class="bg-dark text-lg-left"></th>
+									 				<th class="bg-dark text-lg-left"></th>
+									 				<th class="bg-dark text-lg-left">Overs</th>
+									 				<th class="bg-dark text-lg-left">Runs</th>
+									 				<th class="bg-dark text-lg-left">Wickets</th>
+
+
+
+									 	 </tr>
+									 	</thead>
+									 				<tr>
+														<td >{{ key['name10']}}</td>
+														<td >{{ key['']}}</td>
+														<td >{{ key['']}}</td>
+														<td>{{ key['overs10'] }}</td>
+														<td>{{ key['runs10'] }}</td>
+														<td>{{ key['wickets10'] }}</td>
+														</tr>
+														<tr>
+														<td >{{ key['name11']}}</td>
+														<td >{{ key['']}}</td>
+														<td >{{ key['']}}</td>
+														<td>{{ key['overs11'] }}</td>
+														<td>{{ key['runs11'] }}</td>
+														<td>{{ key['wickets11'] }}</td>
+														</tr>
+														<tr>
+														<td >{{ key['name12']}}</td>
+														<td >{{ key['']}}</td>
+														<td >{{ key['']}}</td>
+														<td>{{ key['overs12'] }}</td>
+														<td>{{ key['runs12'] }}</td>
+														<td>{{ key['wickets12'] }}</td>
+														</tr>
+														<tr>
+														<td >{{ key['name13']}}</td>
+														<td >{{ key['']}}</td>
+														<td >{{ key['']}}</td>
+														<td>{{ key['overs13'] }}</td>
+														<td>{{ key['runs13'] }}</td>
+														<td>{{ key['wickets13'] }}</td>
+														</tr>
+														<tr>
+														<td >{{ key['name14']}}</td>
+														<td >{{ key['']}}</td>
+														<td >{{ key['']}}</td>
+														<td>{{ key['overs14'] }}</td>
+														<td>{{ key['runs14'] }}</td>
+														<td>{{ key['wickets14'] }}</td>
+														</tr>
+														<tr>
+														<td >{{ key['name15']}}</td>
+														<td >{{ key['']}}</td>
+														<td >{{ key['']}}</td>
+														<td>{{ key['overs15'] }}</td>
+														<td>{{ key['runs15'] }}</td>
+														<td>{{ key['wickets15'] }}</td>
+														</tr>
+														<tr>
+														<td >{{ key['name16']}}</td>
+														<td >{{ key['']}}</td>
+														<td >{{ key['']}}</td>
+														<td>{{ key['overs16'] }}</td>
+														<td>{{ key['runs16'] }}</td>
+														<td>{{ key['wickets16'] }}</td>
+														</tr>
+														<tr>
+														<td >{{ key['name17']}}</td>
+														<td >{{ key['']}}</td>
+														<td >{{ key['']}}</td>
+														<td>{{ key['overs17'] }}</td>
+														<td>{{ key['runs17'] }}</td>
+														<td>{{ key['wickets17'] }}</td>
+														</tr>
+														<tr>
+														<td >{{ key['name18']}}</td>
+														<td >{{ key['']}}</td>
+														<td >{{ key['']}}</td>
+														<td>{{ key['overs18'] }}</td>
+														<td>{{ key['runs18'] }}</td>
+														<td>{{ key['wickets18'] }}</td>
+														</tr>
+														<tr>
+														<td >{{ key['name19']}}</td>
+														<td >{{ key['']}}</td>
+														<td >{{ key['']}}</td>
+														<td>{{ key['overs19'] }}</td>
+														<td>{{ key['runs19'] }}</td>
+														<td>{{ key['wickets19'] }}</td>
+														</tr>
+														<tr>
+														<td >{{ key['name20']}}</td>
+														<td >{{ key['']}}</td>
+														<td >{{ key['']}}</td>
+														<td>{{ key['overs20'] }}</td>
+														<td>{{ key['runs20'] }}</td>
+														<td>{{ key['wickets20'] }}</td>
+														</tr>
+{% endif %}
+									  </tbody>
+									 </table>
+	{%endfor%}
+
+	{% else %}
+	<div class="text-xs-center">
+    <ul class="pagination">
+        <h4><b> Match has not started yet </h4></b>
+				<br>
+				<blockquote class="blockquote text-center">
+					 <p class="mb-0">"Remember, patience has its reward! " </p>
+					 <footer class="blockquote-footer"> Rahul Dravid <cite title="Source Title"></cite></footer>
+				</blockquote>
+				</br>
+    </ul>
+</div>
+	{% endif %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}

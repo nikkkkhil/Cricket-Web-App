@@ -1,0 +1,732 @@
+<!DOCTYPE HTML>
+
+<!-- Mirrored from the-wall-cricket.herokuapp.com/womensratting by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 26 Feb 2018 08:44:07 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+    <title>CricketScores - womensranking</title>
+    <!-- Bootstrap -->
+    <link href="static/stylesheets/bootstrap.min.css" rel='stylesheet' type='text/css' integrity="sha384-AysaV+vQoT3kOAXZkl02PThvDr8HYKPZhNT5h/CXfBThSRXQ6jW5DO2ekP5ViFdi" crossorigin="anonymous"/>
+
+    <!-- Fontawesome -->
+    <link href="static/stylesheets/font-awesome.min.css" rel='stylesheet' type='text/css' />
+    <link href="static/stylesheets/style.css" rel='stylesheet' type='text/css' />
+
+    <!-- jQuery -->
+    <link rel="stylesheet" href="static/stylesheets/jquery-ui.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="description" content="Cool webapp to catch  latest cricket news, live match scores and played match details">
+    <meta name="keywords" content="Cricket,THEWALL,scorecard,commentary,match news, live scores, league table, ICC rankings. ">
+    <meta name="author" content="Nikhil R">
+    <meta name="Reference" content="Huy Le/BBALLFAST">
+
+    <link rel="shortcut icon" href="static/images/cricket-ball.png">
+</head>
+<nav class="navbar navbar-fixed-top navbar-dark bg-inverse" style="background: coral;">
+    <a class="navbar-brand" href="index.html"><img class="banner-logo" src="static/images/rahul-dravid-174.png">The Wall</a>
+    <nav class="nav navbar-nav float-xs-left">
+        <a class="nav-item nav-link" href="News.html">News</a>
+        <a class="nav-item nav-link" href="Blogs.html">Blogs</a>
+        <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="Rankings.html"id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Ranking
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="Rankings.html">Team rankings</a>
+          <a class="dropdown-item" href="playersratting.html">Player rankings</a>
+          <a class="dropdown-item" href='womensratting.html'>Women rankings</a>
+        </div>
+      </li>
+                <a class="nav-item nav-link" href="Points-Table.html">Points-Table</a>
+        <a class="nav-item nav-link" href="Photos.html">Photos</a>
+    </nav>
+
+</nav><!-- /.navbar -->
+
+<!-- Content -->
+<br></br>
+<div class="container">
+   <div class="row">
+<div class="col-lg-6">
+   <table class="standings-datatable table table-sm">
+      <thead class="thead-inverse">
+         <tr>
+            <th class="bg-primary text-lg-left">24 February 2018 </th>
+            <th class="bg-primary text-lg-left"></th>
+            <th class="bg-primary text-lg-left"></th>
+            <th class="bg-primary text-lg-right">ICC Women&#39;s Championship</th>
+         </tr>
+      <thead class="thead-inverse">
+         <tr>
+            <th class=" text-lg-left">TEAM</th>
+            <th class=" text-lg-left">Matches</th>
+            <th class=" text-lg-left">Points</th>
+            <th class=" text-lg-left">Rating</th>
+         </tr>
+      </thead>
+      <tbody>
+         
+         <tr class="table table-bordered">
+            <td>England Women</td>
+            <td>40</td>
+            <td>5146</td>
+            <td>129</td>
+         </tr>
+         
+         <tr class="table table-bordered">
+            <td>Australia Women</td>
+            <td>46</td>
+            <td>5898</td>
+            <td>128</td>
+         </tr>
+         
+         <tr class="table table-bordered">
+            <td>New Zealand Women</td>
+            <td>50</td>
+            <td>5842</td>
+            <td>117</td>
+         </tr>
+         
+         <tr class="table table-bordered">
+            <td>India Women</td>
+            <td>52</td>
+            <td>6015</td>
+            <td>116</td>
+         </tr>
+         
+         <tr class="table table-bordered">
+            <td>West Indies Women</td>
+            <td>41</td>
+            <td>4243</td>
+            <td>103</td>
+         </tr>
+         
+         <tr class="table table-bordered">
+            <td>South Africa Women</td>
+            <td>62</td>
+            <td>5775</td>
+            <td>93</td>
+         </tr>
+         
+         <tr class="table table-bordered">
+            <td>Pakistan Women</td>
+            <td>46</td>
+            <td>3338</td>
+            <td>73</td>
+         </tr>
+         
+         <tr class="table table-bordered">
+            <td>Sri Lanka Women</td>
+            <td>46</td>
+            <td>3010</td>
+            <td>65</td>
+         </tr>
+         
+         <tr class="table table-bordered">
+            <td>Bangladesh Women</td>
+            <td>19</td>
+            <td>704</td>
+            <td>37</td>
+         </tr>
+         
+         <tr class="table table-bordered">
+            <td>Ireland Women</td>
+            <td>17</td>
+            <td>504</td>
+            <td>30</td>
+         </tr>
+         
+      </tbody>
+   </table>
+ </div>
+<div class="col-lg-6">
+  <table class="standings-datatable table table-sm">
+     <thead class="thead-inverse">
+        <tr>
+           <th class="bg-primary text-lg-left">ICC Player Rattings</th>
+           <th class="bg-primary text-lg-left"></th>
+           <th class="bg-primary text-lg-left"></th>
+           <th class="bg-primary text-lg-right">Women' s ODI Batting</th>
+        </tr>
+     <thead class="thead-inverse">
+        <tr>
+           <th class=" text-lg-left">Rank</th>
+           <th class=" text-lg-left">Name</th>
+           <th class=" text-lg-left">Country</th>
+           <th class=" text-lg-left">Rating</th>
+        </tr>
+     </thead>
+     <tbody>
+        
+        <tr class="table table-bordered">
+           <td>1</td>
+           <td>E.A. Perry</td>
+           <td>AUS</td>
+           <td>725</td>
+        </tr>
+        
+        <tr class="table table-bordered">
+           <td>2</td>
+           <td>M.M. Lanning</td>
+           <td>AUS</td>
+           <td>718</td>
+        </tr>
+        
+        <tr class="table table-bordered">
+           <td>3</td>
+           <td>M. Raj</td>
+           <td>IND</td>
+           <td>707</td>
+        </tr>
+        
+        <tr class="table table-bordered">
+           <td>4</td>
+           <td>A.E. Satterthwaite</td>
+           <td>NZ</td>
+           <td>683</td>
+        </tr>
+        
+        <tr class="table table-bordered">
+           <td>5</td>
+           <td>A.J. Blackwell</td>
+           <td>AUS</td>
+           <td>672</td>
+        </tr>
+        
+        <tr class="table table-bordered">
+           <td>6</td>
+           <td>S.W. Bates</td>
+           <td>NZ</td>
+           <td>668</td>
+        </tr>
+        
+        <tr class="table table-bordered">
+           <td>7</td>
+           <td>H. Kaur</td>
+           <td>IND</td>
+           <td>660</td>
+        </tr>
+        
+        <tr class="table table-bordered">
+           <td>8</td>
+           <td>L. Lee</td>
+           <td>SA</td>
+           <td>622</td>
+        </tr>
+        
+        <tr class="table table-bordered">
+           <td>9</td>
+           <td>N. Sciver</td>
+           <td>ENG</td>
+           <td>609</td>
+        </tr>
+        
+        <tr class="table table-bordered">
+           <td>10</td>
+           <td>S.J. Taylor</td>
+           <td>ENG</td>
+           <td>604</td>
+        </tr>
+        
+     </tbody>
+  </table>
+</div>
+</div>
+<div class="row">
+  <div class="col-lg-6">
+    <table class="standings-datatable table table-sm">
+    <thead class="thead-inverse">
+       <tr>
+          <th class="bg-primary text-lg-left">ICC Player Rattings</th>
+          <th class="bg-primary text-lg-left"></th>
+          <th class="bg-primary text-lg-left"></th>
+          <th class="bg-primary text-lg-right">Women's ODI Bowling</th>
+       </tr>
+    <thead class="thead-inverse">
+       <tr>
+          <th class=" text-lg-left">Rank</th>
+          <th class=" text-lg-left">Name</th>
+          <th class=" text-lg-left">Country</th>
+          <th class=" text-lg-left">Rating</th>
+       </tr>
+    </thead>
+    <tbody>
+       
+       <tr class="table table-bordered">
+          <td>1</td>
+          <td>M. Kapp</td>
+          <td>SA</td>
+          <td>653</td>
+       </tr>
+       
+       <tr class="table table-bordered">
+          <td>2</td>
+          <td>J. Goswami</td>
+          <td>IND</td>
+          <td>643</td>
+       </tr>
+       
+       <tr class="table table-bordered">
+          <td>3</td>
+          <td>S.R. Taylor</td>
+          <td>WI</td>
+          <td>626</td>
+       </tr>
+       
+       <tr class="table table-bordered">
+          <td>4</td>
+          <td>M.L. Schutt</td>
+          <td>AUS</td>
+          <td>619</td>
+       </tr>
+       
+       <tr class="table table-bordered">
+          <td>5</td>
+          <td>J.L. Jonassen</td>
+          <td>AUS</td>
+          <td>616</td>
+       </tr>
+       
+       <tr class="table table-bordered">
+          <td>6</td>
+          <td>S. Ismail</td>
+          <td>SA</td>
+          <td>599</td>
+       </tr>
+       
+       <tr class="table table-bordered">
+          <td>7</td>
+          <td>A. Shrubsole</td>
+          <td>ENG</td>
+          <td>595</td>
+       </tr>
+       
+       <tr class="table table-bordered">
+          <td>8</td>
+          <td> Sana Mir</td>
+          <td>PAK</td>
+          <td>593</td>
+       </tr>
+       
+       <tr class="table table-bordered">
+          <td>9</td>
+          <td>D. van Niekerk</td>
+          <td>SA</td>
+          <td>567</td>
+       </tr>
+       
+       <tr class="table table-bordered">
+          <td>10</td>
+          <td>A. Khaka</td>
+          <td>SA</td>
+          <td>565</td>
+       </tr>
+       
+    </tbody>
+ </table>
+</div>
+  <div class="col-lg-6">
+ <table class="standings-datatable table table-sm">
+     <thead class="thead-inverse">
+        <tr>
+           <th class="bg-primary text-lg-left">ICC Player Rattings</th>
+           <th class="bg-primary text-lg-left"></th>
+           <th class="bg-primary text-lg-left"></th>
+           <th class="bg-primary text-lg-right">Women's ODI Allrounders</th>
+        </tr>
+     <thead class="thead-inverse">
+        <tr>
+           <th class=" text-lg-left">Rank</th>
+           <th class=" text-lg-left">Name</th>
+           <th class=" text-lg-left">Country</th>
+           <th class=" text-lg-left">Rating</th>
+        </tr>
+     </thead>
+     <tbody>
+        
+        <tr class="table table-bordered">
+           <td>1</td>
+           <td>E.A. Perry</td>
+           <td>AUS</td>
+           <td>405</td>
+        </tr>
+        
+        <tr class="table table-bordered">
+           <td>2</td>
+           <td>S.R. Taylor</td>
+           <td>WI</td>
+           <td>377</td>
+        </tr>
+        
+        <tr class="table table-bordered">
+           <td>3</td>
+           <td>D. van Niekerk</td>
+           <td>SA</td>
+           <td>296</td>
+        </tr>
+        
+        <tr class="table table-bordered">
+           <td>4</td>
+           <td>M. Kapp</td>
+           <td>SA</td>
+           <td>281</td>
+        </tr>
+        
+        <tr class="table table-bordered">
+           <td>5</td>
+           <td>S.W. Bates</td>
+           <td>NZ</td>
+           <td>244</td>
+        </tr>
+        
+        <tr class="table table-bordered">
+           <td>6</td>
+           <td> Sana Mir</td>
+           <td>PAK</td>
+           <td>238</td>
+        </tr>
+        
+        <tr class="table table-bordered">
+           <td>7</td>
+           <td>A.E. Satterthwaite</td>
+           <td>NZ</td>
+           <td>236</td>
+        </tr>
+        
+        <tr class="table table-bordered">
+           <td>8</td>
+           <td>D. Sharma</td>
+           <td>IND</td>
+           <td>234</td>
+        </tr>
+        
+        <tr class="table table-bordered">
+           <td>9</td>
+           <td>N. Sciver</td>
+           <td>ENG</td>
+           <td>232</td>
+        </tr>
+        
+        <tr class="table table-bordered">
+           <td>10</td>
+           <td>J. Goswami</td>
+           <td>IND</td>
+           <td>205</td>
+        </tr>
+        
+     </tbody>
+  </table>
+</div>
+</div>
+<div class="row">
+  <div class="col-lg-6">
+    <table class="standings-datatable table table-sm">
+     <thead class="thead-inverse">
+        <tr>
+           <th class="bg-primary text-lg-left">ICC Player Rattings</th>
+           <th class="bg-primary text-lg-left"></th>
+           <th class="bg-primary text-lg-left"></th>
+           <th class="bg-primary text-lg-right">Women's T20 Battings</th>
+        </tr>
+     <thead class="thead-inverse">
+        <tr>
+           <th class=" text-lg-left">Rank</th>
+           <th class=" text-lg-left">Name</th>
+           <th class=" text-lg-left">Country</th>
+           <th class=" text-lg-left">Rating</th>
+        </tr>
+     </thead>
+     <tbody>
+        
+        <tr class="table table-bordered">
+           <td>1</td>
+           <td>S.R. Taylor</td>
+           <td>WI</td>
+           <td>678</td>
+        </tr>
+        
+        <tr class="table table-bordered">
+           <td>2</td>
+           <td>S.W. Bates</td>
+           <td>NZ</td>
+           <td>661</td>
+        </tr>
+        
+        <tr class="table table-bordered">
+           <td>3</td>
+           <td>D.J.S. Dottin</td>
+           <td>WI</td>
+           <td>623</td>
+        </tr>
+        
+        <tr class="table table-bordered">
+           <td>4</td>
+           <td>M.M. Lanning</td>
+           <td>AUS</td>
+           <td>618</td>
+        </tr>
+        
+        <tr class="table table-bordered">
+           <td>5</td>
+           <td>M. Raj</td>
+           <td>IND</td>
+           <td>609</td>
+        </tr>
+        
+        <tr class="table table-bordered">
+           <td>6</td>
+           <td>S.J. Taylor</td>
+           <td>ENG</td>
+           <td>586</td>
+        </tr>
+        
+        <tr class="table table-bordered">
+           <td>7</td>
+           <td>B.L. Mooney</td>
+           <td>AUS</td>
+           <td>562</td>
+        </tr>
+        
+        <tr class="table table-bordered">
+           <td>8</td>
+           <td>H. Kaur</td>
+           <td>IND</td>
+           <td>550</td>
+        </tr>
+        
+        <tr class="table table-bordered">
+           <td>9</td>
+           <td>S.F.M. Devine</td>
+           <td>NZ</td>
+           <td>534</td>
+        </tr>
+        
+        <tr class="table table-bordered">
+           <td>10</td>
+           <td>M. du Preez</td>
+           <td>SA</td>
+           <td>531</td>
+        </tr>
+        
+     </tbody>
+  </table>
+</div>
+ <div class="col-lg-6">
+   <table class="standings-datatable table table-sm">
+     <thead class="thead-inverse">
+        <tr>
+           <th class="bg-primary text-lg-left">ICC Player Rattings</th>
+           <th class="bg-primary text-lg-left"></th>
+           <th class="bg-primary text-lg-left"></th>
+           <th class="bg-primary text-lg-right">Women's T20 Bowllers</th>
+        </tr>
+     <thead class="thead-inverse">
+        <tr>
+           <th class=" text-lg-left">Rank</th>
+           <th class=" text-lg-left">Name</th>
+           <th class=" text-lg-left">Country</th>
+           <th class=" text-lg-left">Rating</th>
+        </tr>
+     </thead>
+     <tbody>
+        
+        <tr class="table table-bordered">
+           <td>1</td>
+           <td>H.K. Matthews</td>
+           <td>WI</td>
+           <td>631</td>
+        </tr>
+        
+        <tr class="table table-bordered">
+           <td>2</td>
+           <td>M.L. Schutt</td>
+           <td>AUS</td>
+           <td>625</td>
+        </tr>
+        
+        <tr class="table table-bordered">
+           <td>3</td>
+           <td>A. Mohammed</td>
+           <td>WI</td>
+           <td>609</td>
+        </tr>
+        
+        <tr class="table table-bordered">
+           <td>4</td>
+           <td>J.L. Jonassen</td>
+           <td>AUS</td>
+           <td>606</td>
+        </tr>
+        
+        <tr class="table table-bordered">
+           <td>5</td>
+           <td>D. Hazell</td>
+           <td>ENG</td>
+           <td>593</td>
+        </tr>
+        
+        <tr class="table table-bordered">
+           <td>6</td>
+           <td>A. Shrubsole</td>
+           <td>ENG</td>
+           <td>589</td>
+        </tr>
+        
+        <tr class="table table-bordered">
+           <td>7</td>
+           <td>L.M.M. Tahuhu</td>
+           <td>NZ</td>
+           <td>587</td>
+        </tr>
+        
+        <tr class="table table-bordered">
+           <td>8</td>
+           <td>E.A. Perry</td>
+           <td>AUS</td>
+           <td>580</td>
+        </tr>
+        
+        <tr class="table table-bordered">
+           <td>9</td>
+           <td>L.M. Kasperek</td>
+           <td>NZ</td>
+           <td>576</td>
+        </tr>
+        
+        <tr class="table table-bordered">
+           <td>10</td>
+           <td>M.J.G. Nielsen</td>
+           <td>NZ</td>
+           <td>569</td>
+        </tr>
+        
+     </tbody>
+  </table>
+</div>
+</div>
+<div class="row">
+  <div class="col-lg-6">
+    <table class="standings-datatable table table-sm">
+     <thead class="thead-inverse">
+        <tr>
+           <th class="bg-primary text-lg-left">ICC Player Rattings</th>
+           <th class="bg-primary text-lg-left"></th>
+           <th class="bg-primary text-lg-left"></th>
+           <th class="bg-primary text-lg-right">Women's T20 Allrounders</th>
+        </tr>
+     <thead class="thead-inverse">
+        <tr>
+           <th class=" text-lg-left">Rank</th>
+           <th class=" text-lg-left">Name</th>
+           <th class=" text-lg-left">Country</th>
+           <th class=" text-lg-left">Rating</th>
+        </tr>
+     </thead>
+     <tbody>
+        
+        <tr class="table table-bordered">
+           <td>1</td>
+           <td>H.K. Matthews</td>
+           <td>WI</td>
+           <td>288</td>
+        </tr>
+        
+        <tr class="table table-bordered">
+           <td>2</td>
+           <td>S.R. Taylor</td>
+           <td>WI</td>
+           <td>286</td>
+        </tr>
+        
+        <tr class="table table-bordered">
+           <td>3</td>
+           <td>D.J.S. Dottin</td>
+           <td>WI</td>
+           <td>278</td>
+        </tr>
+        
+        <tr class="table table-bordered">
+           <td>4</td>
+           <td>E.A. Perry</td>
+           <td>AUS</td>
+           <td>267</td>
+        </tr>
+        
+        <tr class="table table-bordered">
+           <td>5</td>
+           <td>S.W. Bates</td>
+           <td>NZ</td>
+           <td>246</td>
+        </tr>
+        
+        <tr class="table table-bordered">
+           <td>6</td>
+           <td>I.M.H.C. Joyce</td>
+           <td>IRE</td>
+           <td>227</td>
+        </tr>
+        
+        <tr class="table table-bordered">
+           <td>7</td>
+           <td>J.L. Jonassen</td>
+           <td>AUS</td>
+           <td>224</td>
+        </tr>
+        
+        <tr class="table table-bordered">
+           <td>8</td>
+           <td> Salma Khatun</td>
+           <td>BAN</td>
+           <td>223</td>
+        </tr>
+        
+        <tr class="table table-bordered">
+           <td>9</td>
+           <td>S.F.M. Devine</td>
+           <td>NZ</td>
+           <td>220</td>
+        </tr>
+        
+        <tr class="table table-bordered">
+           <td>10</td>
+           <td>H. Kaur</td>
+           <td>IND</td>
+           <td>216</td>
+        </tr>
+        
+     </tbody>
+</div>
+</div>
+<br></br>
+</div>
+</div>
+
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<script src="static/javascripts/jquery.min.js" integrity="sha384-THPy051/pYDQGanwU6poAc/hOdQxjnOEXzbT+OuUAFqNqFjL+4IGLBgCJC3ZOShY" crossorigin="anonymous"></script>
+<script src="static/javascripts/tether.min.js" integrity="sha384-Plbmg8JY28KFelvJVai01l8WyZzrYWG825m+cZ0eDDS1f7d/js6ikvy1+X+guPIB" crossorigin="anonymous"></script>
+<script src="static/javascripts/bootstrap.min.js" integrity="sha384-BLiI7JTZm+JWlgKa0M0kGRpJbF2J8q+qreVrKBC47e3K6BW78kGLrCkeRX6I9RoK" crossorigin="anonymous"></script>
+
+<!-- jQuery -->
+<script src="static/javascripts/jquery-ui.js"></script>
+
+<!-- Bootstrap DataTable -->
+<!-- <link rel="stylesheet" href="https://cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css"> -->
+<script src="static/javascripts/jquery.dataTables.min.js"></script>
+<script src="static/javascripts/dataTables.bootstrap4.min.js"></script>
+
+<!-- Google Analytics -->
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-46691413-7', 'auto');
+    ga('send', 'pageview');
+</script>
+
+<script src="static/javascripts/bootstrap-table.js"></script>
+<script src="static/javascripts/datepicker.js"></script>

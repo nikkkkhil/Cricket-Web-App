@@ -1,0 +1,15 @@
+import requests
+from bs4 import BeautifulSoup
+url = "http://www.espncricinfo.com/series/_/id/8890/season/2018/vijay-hazare-trophy/"
+page = requests.get(url)
+soup = BeautifulSoup(page.text,"html.parser")
+match_type = (soup.find_all('tbody'))[0]
+ret = []
+row = {}
+for tr in match_type.find_all('tr'):
+			tds = tr.text
+			if len(tds) > 0 :
+			row = {'Team':tds[0].text,'Matches': tds[1].text, 'points' : tds[2].text, 'Rating': tds[3].text}
+			ret.append(row)
+			row = {}
+print(ret)

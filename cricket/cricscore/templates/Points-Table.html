@@ -1,0 +1,153 @@
+{% extends "layout.html" %}
+{% block body %}
+<!-- Content -->
+<br></br>
+<br></br>
+<br></br>
+<div class="container">
+<table class="standings-datatable table table-sm">
+      <thead class="thead-inverse">
+         <tr>
+            <th class="bg-primary text-lg-left">Pakistan Super League Table - 2018</th>
+            <th class="bg-primary text-lg-left"></th>
+            <th class="bg-primary text-lg-left"></th>
+            <th class="bg-primary text-lg-right"></th>
+            <th class="bg-primary text-lg-right"></th>
+            <th class="bg-primary text-lg-right"></th>
+            <th class="bg-primary text-lg-right"></th>
+            <th class="bg-primary text-lg-right"></th>
+            <th class="bg-primary text-lg-right"></th>
+            <th class="bg-primary text-lg-right"></th>
+         </tr>
+      </thead>
+      <thead class="thead-inverse">
+         <tr>
+
+            <th class=" text-lg-center">TEAM</th>
+            <th class=" text-lg-left">M</th>
+            <th class=" text-lg-left">W</th>
+            <th class=" text-lg-left">L</th>
+            <th class=" text-lg-left">T</th>
+            <th class=" text-lg-left">N/R</th>
+            <th class=" text-lg-left">PT</th>
+            <th class=" text-lg-left">NRR</th>
+            <th class=" text-lg-left">FOR</th>
+            <th class=" text-lg-left">AGAINST</th>
+         </tr>
+      </thead>
+      <tbody>
+         {% for team in pointstt2 %}
+         <tr class="table table-bordered">
+           {% if team["Teamname"] %}
+            <td><img class="team-logo" src= "/static/{{team["image"] }}">{{ team["Teamname"]}}</td>
+               {% endif %}
+            <td>{{ team['M'] }}</td>
+            <td>{{ team['W'] }}</td>
+            <td>{{ team['L'] }}</td>
+            <td>{{ team['T'] }}</td>
+            <td>{{ team['N/R'] }}</td>
+            <td>{{ team['PT'] }}</td>
+            <td>{{ team['NRR'] }}</td>
+            <td>{{ team['FOR'] }}</td>
+            <td>{{ team['AGAINST'] }}</td>
+         </tr>
+         {% endfor %}
+      </tbody>
+    </table>
+        <table class="standings-datatable table table-sm">
+      <thead class="thead-inverse">
+         <tr>
+            <th class="bg-primary text-lg-left">Tasman 20-20 Trophy</th>
+            <th class="bg-primary text-lg-left"></th>
+            <th class="bg-primary text-lg-left"></th>
+            <th class="bg-primary text-lg-right"></th>
+            <th class="bg-primary text-lg-right"></th>
+            <th class="bg-primary text-lg-right"></th>
+            <th class="bg-primary text-lg-right"></th>
+            <th class="bg-primary text-lg-right"></th>
+            <th class="bg-primary text-lg-right"></th>
+            <th class="bg-primary text-lg-right"></th>
+         </tr>
+      </thead>
+      {% if pointstt %}
+      <thead class="thead-inverse">
+         <tr>
+            <th class=" text-lg-center">TEAM</th>
+            <th class=" text-lg-left">M</th>
+            <th class=" text-lg-left">W</th>
+            <th class=" text-lg-left">L</th>
+            <th class=" text-lg-left">T</th>
+            <th class=" text-lg-left">N/R</th>
+            <th class=" text-lg-left">PT</th>
+            <th class=" text-lg-left">NRR</th>
+            <th class=" text-lg-left">FOR</th>
+            <th class=" text-lg-left">AGAINST</th>
+         </tr>
+      </thead>
+      <tbody>
+         {% for team in pointstt %}
+         <tr class="table table-bordered">
+           {% if team["Teamname"] %}
+            <td><img class="team-logo" src= "/static/{{team["image"] }}">{{ team["Teamname"]}}</td>
+               {% endif %}
+            <td>{{ team['M'] }}</td>
+            <td>{{ team['W'] }}</td>
+            <td>{{ team['L'] }}</td>
+            <td>{{ team['T'] }}</td>
+            <td>{{ team['N/R'] }}</td>
+            <td>{{ team['PT'] }}</td>
+            <td>{{ team['NRR'] }}</td>
+            <td>{{ team['FOR'] }}</td>
+            <td>{{ team['AGAINST'] }}</td>
+         </tr>
+         {% endfor %}
+         {% endif %}
+      </tbody>
+    </table>
+    <table class="standings-datatable table table-sm">
+  <thead class="thead-inverse">
+     <tr>
+        <th class="bg-primary text-lg-left">Sheffield Shield - 2017-18</th>
+        <th class="bg-primary text-lg-left"></th>
+        <th class="bg-primary text-lg-left"></th>
+        <th class="bg-primary text-lg-right"></th>
+        <th class="bg-primary text-lg-right"></th>
+        <th class="bg-primary text-lg-right"></th>
+        <th class="bg-primary text-lg-right"></th>
+        <th class="bg-primary text-lg-right"></th>
+
+     </tr>
+  </thead>
+  {% if pointstt1 %}
+  <thead class="thead-inverse">
+     <tr>
+        <th class=" text-lg-center">TEAM</th>
+        <th class=" text-lg-left">M</th>
+        <th class=" text-lg-left">W</th>
+        <th class=" text-lg-left">L</th>
+        <th class=" text-lg-left">T</th>
+        <th class=" text-lg-left">D</th>
+        <th class=" text-lg-left">N/R</th>
+        <th class=" text-lg-left">PT</th>
+     </tr>
+  </thead>
+  <tbody>
+     {% for team in pointstt1 %}
+     <tr class="table table-bordered">
+       {% if team["Teamname"] %}
+        <td><img class="team-logo" src= "/static/{{team["image"] }}">{{ team["Teamname"]}}</td>
+           {% endif %}
+        <td>{{ team['M'] }}</td>
+        <td>{{ team['W'] }}</td>
+        <td>{{ team['L'] }}</td>
+        <td>{{ team['T'] }}</td>
+        <td>{{ team['D'] }}</td>
+        <td>{{ team['N/R'] }}</td>
+        <td>{{ team['PT'] }}</td>
+     </tr>
+     {% endfor %}
+     {% endif %}
+  </tbody>
+</table>
+</div>
+{% endblock %}

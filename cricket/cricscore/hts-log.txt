@@ -1,0 +1,12 @@
+HTTrack3.48-21 launched on Mon, 26 Feb 2018 14:12:34 at https://the-wall-cricket.herokuapp.com/
+(httrack https://the-wall-cricket.herokuapp.com/ )
+
+Information, Warnings and Errors reported for this mirror:
+note:	the hts-log.txt file, and hts-cache folder, may contain sensitive information,
+	such as username/password authentication for websites mirrored in this project
+	do not share these files/folders if you want these information to remain private
+
+14:14:11	Error: 	"NOT FOUND" (404) at link https://the-wall-cricket.herokuapp.com/static/images/ui-icons_555555_256x240.png (from https://the-wall-cricket.herokuapp.com/static/stylesheets/jquery-ui.css)
+
+HTTrack Website Copier/3.48-21 mirror complete in 1 minutes 37 seconds : 87 links scanned, 85 files written (7356142 bytes overall) [7387047 bytes received at 76155 bytes/sec], 14.5 requests per connection
+(1 errors, 0 warnings, 0 messages)

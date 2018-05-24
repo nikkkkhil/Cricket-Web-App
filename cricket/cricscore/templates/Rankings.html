@@ -1,0 +1,149 @@
+{% extends "layout.html" %}
+{% block body %}
+<!-- Content -->
+
+<br></br>
+<div class="container">
+   <div class="row">
+      <div class="col-lg-6">
+        {%if test_ranking_table%}
+        <table class="standings-datatable table table-sm">
+      <thead class="thead-inverse">
+         <tr>
+            <th class="bg-primary text-lg-left">{{test_ranking_table[10]['date-updated']}} </th>
+            <th class="bg-primary text-lg-left"></th>
+            <th class="bg-primary text-lg-left"></th>
+            <th class="bg-primary text-lg-right">{{test_ranking_table[10]['match-type']}}</th>
+         </tr>
+      </thead>
+      <thead class="thead-inverse">
+         <tr>
+            <th class=" text-lg-left">TEAM</th>
+            <th class=" text-lg-left">Matches</th>
+            <th class=" text-lg-left">Points</th>
+            <th class=" text-lg-left">Rating</th>
+         </tr>
+      </thead>
+      <tbody>
+         {% for team in test_ranking_table[:-1] %}
+         <tr class="table table-bordered">
+           {% if team["Team"] %}
+            <td><img class="team-logo" src= "/static/{{team["image"] }}">{{ team["Team"]}}</td>
+                           {% endif %}
+            <td>{{ team['Matches'] }}</td>
+            <td>{{ team['points'] }}</td>
+            <td>{{ team['Rating'] }}</td>
+         </tr>
+         {% endfor %}
+      </tbody>
+    </table>
+    {% endif %}
+    </div>
+    <div class="col-lg-6">
+      <table class="standings-datatable table table-sm">
+        {% if   odi_ranking_table%}
+      <thead class="thead-inverse">
+         <tr>
+            <th class="bg-primary text-lg-left">{{odi_ranking_table[12]['date-updated']}} </th>
+            <th class="bg-primary text-lg-left"></th>
+            <th class="bg-primary text-lg-left"></th>
+            <th class="bg-primary text-lg-right">{{odi_ranking_table[12]['match-type']}}</th>
+         </tr>
+      </thead>
+      <thead class="thead-inverse">
+         <tr>
+            <th class=" text-lg-left">TEAM</th>
+            <th class=" text-lg-left">Matches</th>
+            <th class=" text-lg-left">Points</th>
+            <th class=" text-lg-left">Rating</th>
+         </tr>
+      </thead>
+      <tbody>
+         {% for team in odi_ranking_table[:-1] %}
+         <tr class="table table-bordered">
+           {% if team["Team"] %}
+           <td><img class="team-logo" src= "/static/{{team["image"] }}">{{ team["Team"]}}</td>
+                          {% endif %}
+            <td>{{ team['Matches'] }}</td>
+            <td>{{ team['points'] }}</td>
+            <td>{{ team['Rating'] }}</td>
+         </tr>
+         {% endfor %}
+
+      </tbody>
+   </table>
+   {% endif %}
+ </div>
+</div>
+   <div class="row">
+      <div class="col-lg-6">
+        {% if  t20_ranking_table %}
+        <table class="standings-datatable table table-sm">
+      <thead class="thead-inverse">
+         <tr>
+            <th class="bg-primary text-lg-left">{{t20_ranking_table[17]['date-updated']}} </th>
+            <th class="bg-primary text-lg-left"></th>
+            <th class="bg-primary text-lg-left"></th>
+            <th class="bg-primary text-lg-right">{{t20_ranking_table[17]['match-type']}}</th>
+         </tr>
+      </thead>
+      <thead class="thead-inverse">
+         <tr>
+            <th class=" text-lg-left">TEAM</th>
+            <th class=" text-lg-left">Matches</th>
+            <th class=" text-lg-left">Points</th>
+            <th class=" text-lg-left">Rating</th>
+         </tr>
+      </thead>
+      <tbody>
+         {% for team in t20_ranking_table[:-1] %}
+         <tr class="table table-bordered">
+           {% if team["Team"] %}
+           <td><img class="team-logo" src= "/static/{{team["image"] }}">{{ team["Team"]}}</td>
+                          {% endif %}
+            <td>{{ team['Matches'] }}</td>
+            <td>{{ team['points'] }}</td>
+            <td>{{ team['Rating'] }}</td>
+         </tr>
+         {% endfor %}
+      </tbody>
+   </table>
+   <br></br>
+   {% endif %}
+ </div>
+ <div class="col-lg-6">
+   {%if  women_ranking_table%}
+   <table class="standings-datatable table table-sm">
+      <thead class="thead-inverse">
+         <tr>
+            <th class="bg-primary text-lg-left">{{women_ranking_table[10]['date-updated']}} </th>
+            <th class="bg-primary text-lg-left"></th>
+            <th class="bg-primary text-lg-left"></th>
+            <th class="bg-primary text-lg-right">{{women_ranking_table[10]['match-type']}}</th>
+         </tr>
+      <thead class="thead-inverse">
+         <tr>
+            <th class=" text-lg-left">TEAM</th>
+            <th class=" text-lg-left">Matches</th>
+            <th class=" text-lg-left">Points</th>
+            <th class=" text-lg-left">Rating</th>
+         </tr>
+      </thead>
+      <tbody>
+         {% for team in women_ranking_table[:-1] %}
+         <tr class="table table-bordered">
+           {% if team["Team"] %}
+           <td><img class="team-logo" src= "/static/{{team["image"] }}">{{ team["Team"]}}</td>
+                          {% endif %}
+            <td>{{ team['Matches'] }}</td>
+            <td>{{ team['points'] }}</td>
+            <td>{{ team['Rating'] }}</td>
+         </tr>
+         {% endfor %}
+      </tbody>
+   </table>
+   {% endif %}
+ </div>
+</div>
+</div>
+{% endblock %}

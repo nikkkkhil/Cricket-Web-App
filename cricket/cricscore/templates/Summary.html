@@ -1,0 +1,353 @@
+{% extends "layout.html" %}
+{% block body %}
+
+                 <br></br>
+<div class="col-lg-12">
+{% for game in box%}
+<div class="text-xs-center">
+  <ul class="pagination">
+
+       <h4> {{game['description']}}</h4>
+    {% if game['team_1']['logo_image_path'] %}
+  <h4><img class="<img class="team-logo" src={{'http://www.espncricinfo.com'}}{{game['team_1']['logo_image_path']}}>{{" "}}{{" vs "}}{{" "}}<img class="<img class="team-logo" src={{'http://www.espncricinfo.com'}}{{game['team_2']['logo_image_path']}}></h4>
+  {% endif %}
+<ul class="list-unstyled">
+                   <li><b>Ground:</b> {{ game['ground_name'] }} </li>
+                   <li><b>Title:</b> {{ game['match_title'] }}</li>
+                   <li><b>Gametype:</b>{{game['lighting']}}</li>
+                   <li><b>Winner:</b> {{ game['match_winner']}}</li>
+                   {% if game['innings_list']  %}
+                   <li><b>{{game['innings_list'][0]['description']}}</b> {{"  "}}{{game['innings'][0]['runs']}}{{'-'}}{{game['innings'][0]['wickets']}}{{"  "}}{{"at"}}{{" "}}{{game['innings'][0]['overs']}}</li>
+                   <li><b>{{game['innings_list'][1]['description']}}</b> {{"  "}}{{ game['innings'][1]['runs']}}{{'-'}}{{game['innings'][1]['wickets']}}{{"  "}}{{"at"}}{{" "}}{{game['innings'][1]['overs']}}</li>
+                   {% endif %}
+                   <li><b>Result:</b> {{ game['result']}}</li>
+                   <li><b>Umpires:</b> {{ game['officials'][0]['alpha_name'] }}{{"("}}{{game['officials'][0]['team_name']}}{{")"}}{{','}}{{"  "}}{{ game['officials'][1]['alpha_name'] }}{{"("}}{{game['officials'][1]['team_name']}}{{")"}}</li>
+
+                 </ul>
+               </div>
+             </ul>
+           </div>
+    </div>
+    <br>
+    <table class="table table-sm">
+      <thead class="thead-inverse">
+												<tr>
+
+													  <th class="bg-primary text-lg-left">Innings details</th>
+														<th class="bg-primary text-lg-left"></th>
+														<th class="bg-primary text-lg-left"></th>
+														<th class="bg-primary text-lg-left"></th>
+														<th class="bg-primary text-lg-left"></th>
+														<th class="bg-primary text-lg-right"></th>
+                            <th class="bg-primary text-lg-left"></th>
+														<th class="bg-primary text-lg-left"></th>
+														<th class="bg-primary text-lg-left"></th>
+														<th class="bg-primary text-lg-left"></th>
+														<th class="bg-primary text-lg-left"></th>
+														<th class="bg-primary text-lg-right"></th>
+                            <th class="bg-primary text-lg-left"></th>
+														<th class="bg-primary text-lg-left"></th>
+														<th class="bg-primary text-lg-left"></th>
+														<th class="bg-primary text-lg-right"></th>
+                            {% if game['innings_list'] %}
+                             <th class="bg-primary text-lg-right"></th>
+                            {% endif %}
+												</tr>
+												</thead>
+
+												<tbody>
+      <thead class="thead-inverse">
+
+                <tr class="bg-primary text-white">
+                    <th class="bg-dark text-lg-left">innings_number</th>
+                    {% if game['innings_list'] %}
+                    <th class="bg-dark text-lg-left">batting_team</th>
+                    {% endif %}
+                    <th class="bg-dark text-lg-left">wides</th>
+                    <th class="bg-dark text-lg-left">noballs</th>
+                    <th class="bg-dark text-lg-left">ball_limit</th>
+                    <th class="bg-dark text-lg-left">overs</th>
+                    <th class="bg-dark text-lg-left">balls</th>
+                    <th class="bg-dark text-lg-left">lead</th>
+                    <th class="bg-dark text-lg-left">runs</th>
+                    <th class="bg-dark text-lg-left">run_rate</th>
+                    <th class="bg-dark text-lg-left">wickets</th>
+                    <th class="bg-dark text-lg-left">minutes</th>
+                    <th class="bg-dark text-lg-left">over_limit</th>
+                    <th class="bg-dark text-lg-left">extras</th>
+                    <th class="bg-dark text-lg-left">event_name</th>
+                    <th class="bg-dark text-lg-left">target</th>
+                    <th class="bg-dark text-lg-left">extras</th>
+
+                </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td class="text-lg-left">{{game['innings'][0]['innings_number']}}</td>
+                {% if game['innings_list'] %}
+                <td class="text-lg-left">{{game['innings_list'][0]['description']}}</td>
+                {% endif %}
+                <td class="text-lg-left">{{game['innings'][0]['wides']}}</td>
+                <td class="text-lg-left">{{game['innings'][0]['noballs']}}</td>
+                <td class="text-lg-left">{{game['innings'][0]['ball_limit']}}</td>
+                <td class="text-lg-left"><b>{{game['innings'][0]['overs']}}</b></td>
+                <td class="text-lg-left">{{game['innings'][0]['balls']}}</td>
+                <td class="text-lg-left">{{game['innings'][0]['lead']}}</td>
+                <td class="text-lg-left"><b>{{game['innings'][0]['runs']}}</b></td>
+                <td class="text-lg-left">{{game['innings'][0]['run_rate']}}</td>
+                <td class="text-lg-left"><b>{{game['innings'][0]['wickets']}}</b></td>
+                <td class="text-lg-left">{{game['innings'][0]['minutes']}}</td>
+                <td class="text-lg-left">{{game['innings'][0]['over_limit']}}</td>
+                <td class="text-lg-left">{{game['innings'][0]['extras']}}</td>
+                <td class="text-lg-left">{{game['innings'][0]['event_name']}}</td>
+                <td class="text-lg-left">{{game['innings'][0]['target']}}</td>
+                <td class="text-lg-left">{{game['innings'][0]['extras']}}</td>
+            </tr>
+            <tr>
+                <td class="text-lg-left">{{game['innings'][1]['innings_number']}}</td>
+                {% if game['innings_list'] %}
+                <td class="text-lg-left">{{game['innings_list'][1]['description']}}</td>
+                {% endif %}
+                <td class="text-lg-left">{{game['innings'][1]['wides']}}</td>
+                <td class="text-lg-left">{{game['innings'][1]['noballs']}}</td>
+                <td class="text-lg-left">{{game['innings'][1]['ball_limit']}}</td>
+                <td class="text-lg-left"><b>{{game['innings'][1]['overs']}}</b></td>
+                <td class="text-lg-left">{{game['innings'][1]['balls']}}</td>
+                <td class="text-lg-left">{{game['innings'][1]['lead']}}</td>
+                <td class="text-lg-left"><b>{{game['innings'][1]['runs']}}</b></td>
+                <td class="text-lg-left">{{game['innings'][1]['run_rate']}}</td>
+                <td class="text-lg-left"><b>{{game['innings'][1]['wickets']}}</b></td>
+                <td class="text-lg-left">{{game['innings'][1]['minutes']}}</td>
+                <td class="text-lg-left">{{game['innings'][1]['over_limit']}}</td>
+                <td class="text-lg-left">{{game['innings'][1]['extras']}}</td>
+                <td class="text-lg-left">{{game['innings'][1]['event_name']}}</td>
+                <td class="text-lg-left">{{game['innings'][1]['target']}}</td>
+                <td class="text-lg-left">{{game['innings'][1]['extras']}}</td>
+
+            </tr>
+            </tbody>
+        </table>
+        <br></br>
+        <table class="player-games-datatable table table-sm">
+          <thead class="thead-inverse">
+    												<tr>
+
+    													  <th class="bg-primary text-lg-left">{{game['team_1']['team_general_name']}}{{" "}}Team</th>
+    														<th class="bg-primary text-lg-left"></th>
+    														<th class="bg-primary text-lg-left"></th>
+    														<th class="bg-primary text-lg-left"></th>
+    														<th class="bg-primary text-lg-left"></th>
+    														<th class="bg-primary text-lg-right"></th>
+                                <th class="bg-primary text-lg-left"></th>
+    														<th class="bg-primary text-lg-left"></th>
+    														<th class="bg-primary text-lg-left"></th>
+    														<th class="bg-primary text-lg-left"></th>
+
+
+    												</tr>
+    												</thead>
+
+                              <tbody>
+            <thead class="thead-inverse">
+            <tr class="bg-dark text-white">
+                          <th class="bg-dark text-lg-center">player_primary_role</th>
+                          <th class="bg-dark text-lg-center">card_short</th>
+                          <th class="bg-dark text-lg-center">batting_hand</th>
+                          <th class="bg-dark text-lg-left">age_years</th>
+                          <th class="bg-dark text-lg-left">captain</th>
+                          <th class="bg-dark text-lg-center">known_as</th>
+                          <th class="bg-dark text-lg-left">bowling_pacespin</th>
+                          <th class="bg-dark text-lg-left">bowling_style</th>
+                          <th class="bg-dark text-lg-center">bowling_style_long</th>
+                          <th class="bg-dark text-lg-center">dob</th>
+                                  </tr>
+                  </thead>
+                  <tbody>
+                    {% for team in game['team_1_players'] %}
+                    <tr>
+                      <td class="text-lg-center">{{team["player_primary_role"]}}</td>
+                      <td class="text-lg-center">{{team["card_short"]}}</td>
+                      <td class="text-lg-center">{{team["batting_hand"]}}</td>
+                      <td class="text-lg-center">{{team["age_years"]}}</td>
+                      <td class="text-lg-center">{{team["captain"]}}</td>
+                      <td class="text-lg-center">{{team["known_as"]}}</td>
+                      <td class="text-lg-center">{{team["bowling_pacespin"]}}</td>
+                      <td class="text-lg-center">{{team["bowling_style"]}}</td>
+                      <td class="text-lg-center">{{team["bowling_style_long"]}}</td>
+                      <td class="text-lg-center">{{team["dob"]}}</td>
+                         {% endfor %}
+                    </tr>
+                    </tbody>
+                </table>
+
+        <br></br>
+        <table class="player-games-datatable table table-sm">
+          <thead class="thead-inverse">
+    												<tr>
+
+    													  <th class="bg-primary text-lg-left">{{game['team_2']['team_general_name']}}{{" "}}Team </th>
+    														<th class="bg-primary text-lg-left"></th>
+    														<th class="bg-primary text-lg-left"></th>
+    														<th class="bg-primary text-lg-left"></th>
+    														<th class="bg-primary text-lg-left"></th>
+    														<th class="bg-primary text-lg-right"></th>
+                                <th class="bg-primary text-lg-left"></th>
+    														<th class="bg-primary text-lg-left"></th>
+    														<th class="bg-primary text-lg-left"></th>
+    														<th class="bg-primary text-lg-left"></th>
+
+
+    												</tr>
+    												</thead>
+
+                              <tbody>
+            <thead class="thead-inverse">
+            <tr class="bg-dark text-white">
+                          <th class="bg-dark text-lg-center">player_primary_role</th>
+                          <th class="bg-dark text-lg-center">card_short</th>
+                          <th class="bg-dark text-lg-center">batting_hand</th>
+                          <th class="bg-dark text-lg-left">age_years</th>
+                          <th class="bg-dark text-lg-left">captain</th>
+                          <th class="bg-dark text-lg-center">known_as</th>
+                          <th class="bg-dark text-lg-left">bowling_pacespin</th>
+                          <th class="bg-dark text-lg-left">bowling_style</th>
+                          <th class="bg-dark text-lg-left">bowling_style_long</th>
+                          <th class="bg-dark text-lg-center">dob</th>
+
+                      </tr>
+                  </thead>
+                  <tbody>
+                    {% for team in game['team_2_players'] %}
+                    <tr>
+                      <td class="text-lg-center">{{team["player_primary_role"]}}</td>
+                      <td class="text-lg-center">{{team["card_short"]}}</td>
+                      <td class="text-lg-center">{{team["batting_hand"]}}</td>
+                      <td class="text-lg-center">{{team["age_years"]}}</td>
+                      <td class="text-lg-center">{{team["captain"]}}</td>
+                      <td class="text-lg-center">{{team["known_as"]}}</td>
+                      <td class="text-lg-center">{{team["bowling_pacespin"]}}</td>
+                      <td class="text-lg-center">{{team["bowling_style"]}}</td>
+                      <td class="text-lg-center">{{team["bowling_style_long"]}}</td>
+                      <td class="text-lg-center">{{team["dob"]}}</td>
+
+                     {% endfor %}
+                    </tr>
+                    </tbody>
+                </table>
+                <br></br>
+                {% if game['latest_batting ']  %}
+
+                <table class="player-games-datatable table table-sm">
+                  <thead class="thead-inverse">
+            												<tr>
+
+            													  <th class="bg-primary text-lg-left">2nd Innings Batting Summary</th>
+            														<th class="bg-primary text-lg-left"></th>
+            														<th class="bg-primary text-lg-left"></th>
+            														<th class="bg-primary text-lg-left"></th>
+            														<th class="bg-primary text-lg-left"></th>
+            														<th class="bg-primary text-lg-right"></th>
+                                        <th class="bg-primary text-lg-left"></th>
+            														<th class="bg-primary text-lg-left"></th>
+            														<th class="bg-primary text-lg-left">{{game['innings'][1]['runs']}}-{{game['innings'][1]['wickets']}}</th>
+
+
+            												</tr>
+            												</thead>
+
+                  <thead>
+                    <tbody>
+  <thead class="thead-inverse">
+                    <tr class="bg-dark text-white">
+                                  <th class="bg-dark text-lg-center">position_group</th>
+                                  <th class="bg-dark text-lg-center">position</th>
+                                  <th class="bg-dark text-lg-left">         </th>
+                                  <th class="bg-dark text-lg-center">name</th>
+                                  <th class="bg-dark text-lg-center">known_as</th>
+                                  <th class="bg-dark text-lg-center">hand</th>
+                                  <th class="bg-dark text-lg-center">runs</th>
+                                  <th class="bg-dark text-lg-center">balls_faced</th>
+                                  <th class="bg-dark text-lg-center">notout</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                              {% for team in game['latest_batting '] %}
+
+                              <tr>
+                                <td class="text-lg-center">{{team['position_group']}}</td>
+                                <td class="text-lg-center">{{team['position']}}</td>
+                                <td> <img class="team-logo" src= {{'http://www.espncricinfo.com'}}{{team['image_path']}}></td>
+                                <td class="text-lg-center">{{team['popular_name']}}</td>
+                                <td class="text-lg-center">{{team['known_as']}}</td>
+                                <td class="text-lg-center">{{team['hand']}}</td>
+                                <td class="text-lg-center">{{team['runs']}}</td>
+                                <td class="text-lg-center">{{team['balls_faced']}}</td>
+                                <td class="text-lg-center">{{team['notout']}}</td>
+                                                               {% endfor %}
+                                                               {% endif %}
+                              </tr>
+                              </tbody>
+                          </table>
+                          <br></br>
+                          <br></br>
+                          {% if game['latest_batting ']  %}
+
+                          <table class="player-games-datatable table table-sm">
+                            <thead class="thead-inverse">
+                      												<tr>
+
+                      													  <th class="bg-primary text-lg-left">2nd Innings Bowling Summary</th>
+                      														<th class="bg-primary text-lg-left"></th>
+                      														<th class="bg-primary text-lg-left"></th>
+                      														<th class="bg-primary text-lg-left"></th>
+                      														<th class="bg-primary text-lg-left"></th>
+                      														<th class="bg-primary text-lg-right"></th>
+                                                  <th class="bg-primary text-lg-left"></th>
+                      														<th class="bg-primary text-lg-left"></th>
+                      														<th class="bg-primary text-lg-center">{{game['innings'][1]['overs']}}(O)</th>
+
+
+                      												</tr>
+                      												</thead>
+
+                            <thead>
+                              <tbody>
+            <thead class="thead-inverse">
+                              <tr class="bg-dark text-white">
+                                            <th class="bg-dark text-lg-center">position</th>
+                                            <th class="bg-dark text-lg-left">        </th>
+                                            <th class="bg-dark text-lg-center">name</th>
+                                            <th class="bg-dark text-lg-center">known_as</th>
+                                            <th class="bg-dark text-lg-center">hand</th>
+                                            <th class="bg-dark text-lg-center">pacespin</th>
+                                            <th class="bg-dark text-lg-center">wickets</th>
+                                            <th class="bg-dark text-lg-center">overs</th>
+                                            <th class="bg-dark text-lg-center">conceded</th>
+
+                                      </tr>
+                                      </thead>
+                                      <tbody>
+
+                                        {% for team in game['latest_bowling'] %}
+                                        <tr>
+                                          <td class="text-lg-center">{{team['position']}}</td>
+                                          <td> <img class="team-logo" src= {{'http://www.espncricinfo.com'}}{{team['image_path']}}></td>
+                                          <td class="text-lg-center">{{team['popular_name']}}</td>
+                                          <td class="text-lg-center">{{team['known_as']}}</td>
+                                          <td class="text-lg-center">{{team['hand']}}</td>
+                                          <td class="text-lg-center">{{team['pacespin']}}</td>
+                                          <td class="text-lg-center">{{team['wickets']}}</td>
+                                          <td class="text-lg-center">{{team['overs']}}</td>
+                                          <td class="text-lg-center">{{team['conceded']}}</td>
+                                                                         {% endfor %}
+                                                                         {% endif %}
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                    <br></br>
+
+  {% endfor %}
+</form>
+
+{% endblock %}

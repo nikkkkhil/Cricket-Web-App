@@ -1,0 +1,636 @@
+<!DOCTYPE HTML>
+
+<!-- Mirrored from the-wall-cricket.herokuapp.com/playersratting by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 26 Feb 2018 08:44:07 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+    <title>CricketScores - playersratting</title>
+    <!-- Bootstrap -->
+    <link href="static/stylesheets/bootstrap.min.css" rel='stylesheet' type='text/css' integrity="sha384-AysaV+vQoT3kOAXZkl02PThvDr8HYKPZhNT5h/CXfBThSRXQ6jW5DO2ekP5ViFdi" crossorigin="anonymous"/>
+
+    <!-- Fontawesome -->
+    <link href="static/stylesheets/font-awesome.min.css" rel='stylesheet' type='text/css' />
+    <link href="static/stylesheets/style.css" rel='stylesheet' type='text/css' />
+
+    <!-- jQuery -->
+    <link rel="stylesheet" href="static/stylesheets/jquery-ui.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="description" content="Cool webapp to catch  latest cricket news, live match scores and played match details">
+    <meta name="keywords" content="Cricket,THEWALL,scorecard,commentary,match news, live scores, league table, ICC rankings. ">
+    <meta name="author" content="Nikhil R">
+    <meta name="Reference" content="Huy Le/BBALLFAST">
+
+    <link rel="shortcut icon" href="static/images/cricket-ball.png">
+</head>
+<nav class="navbar navbar-fixed-top navbar-dark bg-inverse" style="background: coral;">
+    <a class="navbar-brand" href="index.html"><img class="banner-logo" src="static/images/rahul-dravid-174.png">The Wall</a>
+    <nav class="nav navbar-nav float-xs-left">
+        <a class="nav-item nav-link" href="News.html">News</a>
+        <a class="nav-item nav-link" href="Blogs.html">Blogs</a>
+        <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="Rankings.html"id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Ranking
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="Rankings.html">Team rankings</a>
+          <a class="dropdown-item" href="playersratting.html">Player rankings</a>
+          <a class="dropdown-item" href='womensratting.html'>Women rankings</a>
+        </div>
+      </li>
+                <a class="nav-item nav-link" href="Points-Table.html">Points-Table</a>
+        <a class="nav-item nav-link" href="Photos.html">Photos</a>
+    </nav>
+
+</nav><!-- /.navbar -->
+
+<!-- Content -->
+<br></br>
+<div class="container">
+   <div class="row">
+      <div class="col-lg-6">
+<table class="standings-datatable table table-sm">
+      <thead class="thead-inverse">
+         <tr>
+            <th class="bg-primary text-lg-left">ICC Player Rattings</th>
+            <th class="bg-primary text-lg-left"></th>
+            <th class="bg-primary text-lg-left"></th>
+            <th class="bg-primary text-lg-right">ODI Batsmen</th>
+         </tr>
+      <thead class="thead-inverse">
+         <tr>
+            <th class=" text-lg-left">Rank</th>
+            <th class=" text-lg-left">Name</th>
+            <th class=" text-lg-left">Country</th>
+            <th class=" text-lg-left">Rating</th>
+         </tr>
+      </thead>
+      <tbody>
+         
+         <tr class="table table-bordered">
+            <td>1</td>
+            <td>V. Kohli</td>
+            <td>IND</td>
+            <td>909</td>
+         </tr>
+         
+         <tr class="table table-bordered">
+            <td>2</td>
+            <td>A.B. de Villiers</td>
+            <td>SA</td>
+            <td>844</td>
+         </tr>
+         
+         <tr class="table table-bordered">
+            <td>3</td>
+            <td>D.A. Warner</td>
+            <td>AUS</td>
+            <td>823</td>
+         </tr>
+         
+         <tr class="table table-bordered">
+            <td>4</td>
+            <td> Babar Azam</td>
+            <td>PAK</td>
+            <td>813</td>
+         </tr>
+         
+         <tr class="table table-bordered">
+            <td>5</td>
+            <td>J.E. Root</td>
+            <td>ENG</td>
+            <td>808</td>
+         </tr>
+         
+         <tr class="table table-bordered">
+            <td>6</td>
+            <td>R.G. Sharma</td>
+            <td>IND</td>
+            <td>799</td>
+         </tr>
+         
+         <tr class="table table-bordered">
+            <td>7</td>
+            <td>Q. de Kock</td>
+            <td>SA</td>
+            <td>783</td>
+         </tr>
+         
+         <tr class="table table-bordered">
+            <td>8</td>
+            <td>F. du Plessis</td>
+            <td>SA</td>
+            <td>782</td>
+         </tr>
+         
+         <tr class="table table-bordered">
+            <td>9</td>
+            <td>K.S. Williamson</td>
+            <td>NZ</td>
+            <td>777</td>
+         </tr>
+         
+         <tr class="table table-bordered">
+            <td>10</td>
+            <td>S Dhawan</td>
+            <td>IND</td>
+            <td>769</td>
+         </tr>
+         
+      </tbody>
+   </table>
+ </div>
+ <div class="col-lg-6">
+            <table class="standings-datatable table table-sm">
+      <thead class="thead-inverse">
+         <tr>
+            <th class="bg-primary text-lg-left">ICC Player Rattings</th>
+            <th class="bg-primary text-lg-left"></th>
+            <th class="bg-primary text-lg-left"></th>
+            <th class="bg-primary text-lg-right">ODI Bowlers</th>
+         </tr>
+      <thead class="thead-inverse">
+         <tr>
+            <th class=" text-lg-left">Rank</th>
+            <th class=" text-lg-left">Name</th>
+            <th class=" text-lg-left">Country</th>
+            <th class=" text-lg-left">Rating</th>
+         </tr>
+      </thead>
+      <tbody>
+         
+         <tr class="table table-bordered">
+            <td>1</td>
+            <td>J.J. Bumrah</td>
+            <td>IND</td>
+            <td>787</td>
+         </tr>
+         
+         <tr class="table table-bordered">
+            <td>1</td>
+            <td> Rashid Khan</td>
+            <td>AFG</td>
+            <td>787</td>
+         </tr>
+         
+         <tr class="table table-bordered">
+            <td>3</td>
+            <td>T.A. Boult</td>
+            <td>NZ</td>
+            <td>729</td>
+         </tr>
+         
+         <tr class="table table-bordered">
+            <td>4</td>
+            <td>J.R. Hazlewood</td>
+            <td>AUS</td>
+            <td>714</td>
+         </tr>
+         
+         <tr class="table table-bordered">
+            <td>5</td>
+            <td>Hasan Ali</td>
+            <td>PAK</td>
+            <td>711</td>
+         </tr>
+         
+         <tr class="table table-bordered">
+            <td>6</td>
+            <td> Imran Tahir</td>
+            <td>SA</td>
+            <td>683</td>
+         </tr>
+         
+         <tr class="table table-bordered">
+            <td>7</td>
+            <td>K. Rabada</td>
+            <td>SA</td>
+            <td>679</td>
+         </tr>
+         
+         <tr class="table table-bordered">
+            <td>8</td>
+            <td>Y.S. Chahal</td>
+            <td>IND</td>
+            <td>667</td>
+         </tr>
+         
+         <tr class="table table-bordered">
+            <td>9</td>
+            <td>M.J. Santner</td>
+            <td>NZ</td>
+            <td>662</td>
+         </tr>
+         
+         <tr class="table table-bordered">
+            <td>10</td>
+            <td>M.A. Starc</td>
+            <td>AUS</td>
+            <td>658</td>
+         </tr>
+         
+      </tbody>
+   </table>
+ </div>
+</div>
+<div class="row">
+<div class="col-lg-6">
+ <table class="standings-datatable table table-sm">
+    <thead class="thead-inverse">
+       <tr>
+          <th class="bg-primary text-lg-left">ICC Player Rattings</th>
+          <th class="bg-primary text-lg-left"></th>
+          <th class="bg-primary text-lg-left"></th>
+          <th class="bg-primary text-lg-right">ODI Allrounders</th>
+       </tr>
+    <thead class="thead-inverse">
+       <tr>
+          <th class=" text-lg-left">Rank</th>
+          <th class=" text-lg-left">Name</th>
+          <th class=" text-lg-left">Country</th>
+          <th class=" text-lg-left">Rating</th>
+       </tr>
+    </thead>
+     <tbody>
+             
+             <tr class="table table-bordered">
+                <td>1</td>
+                <td> Shakib Al Hasan</td>
+                <td>BAN</td>
+                <td>360</td>
+             </tr>
+             
+             <tr class="table table-bordered">
+                <td>2</td>
+                <td> Mohammad Hafeez</td>
+                <td>PAK</td>
+                <td>339</td>
+             </tr>
+             
+             <tr class="table table-bordered">
+                <td>3</td>
+                <td> Mohammad Nabi</td>
+                <td>AFG</td>
+                <td>332</td>
+             </tr>
+             
+             <tr class="table table-bordered">
+                <td>4</td>
+                <td> Rashid Khan</td>
+                <td>AFG</td>
+                <td>311</td>
+             </tr>
+             
+             <tr class="table table-bordered">
+                <td>5</td>
+                <td>A.D. Mathews</td>
+                <td>SL</td>
+                <td>306</td>
+             </tr>
+             
+             <tr class="table table-bordered">
+                <td>6</td>
+                <td>C.R. Woakes</td>
+                <td>ENG</td>
+                <td>302</td>
+             </tr>
+             
+             <tr class="table table-bordered">
+                <td>7</td>
+                <td>J.O. Holder</td>
+                <td>WI</td>
+                <td>282</td>
+             </tr>
+             
+             <tr class="table table-bordered">
+                <td>8</td>
+                <td>B.A. Stokes</td>
+                <td>ENG</td>
+                <td>278</td>
+             </tr>
+             
+             <tr class="table table-bordered">
+                <td>9</td>
+                <td>M.R. Marsh</td>
+                <td>AUS</td>
+                <td>274</td>
+             </tr>
+             
+             <tr class="table table-bordered">
+                <td>10</td>
+                <td>Moeen Ali</td>
+                <td>ENG</td>
+                <td>268</td>
+             </tr>
+             
+          </tbody>
+       </table>
+     </div>
+      <div class="col-lg-6">
+       <table class="standings-datatable table table-sm">
+          <thead class="thead-inverse">
+             <tr>
+                <th class="bg-primary text-lg-left">ICC Player Rattings</th>
+                <th class="bg-primary text-lg-left"></th>
+                <th class="bg-primary text-lg-left"></th>
+                <th class="bg-primary text-lg-right">Twenty20 Batsmen</th>
+             </tr>
+          <thead class="thead-inverse">
+        <tr>
+           <th class=" text-lg-left">Rank</th>
+           <th class=" text-lg-left">Name</th>
+           <th class=" text-lg-left">Country</th>
+           <th class=" text-lg-left">Rating</th>
+        </tr>
+     </thead>
+     <tbody>
+        
+        <tr class="table table-bordered">
+           <td>1</td>
+           <td>C. Munro</td>
+           <td>NZ</td>
+           <td>801</td>
+        </tr>
+        
+        <tr class="table table-bordered">
+           <td>2</td>
+           <td>G.J. Maxwell</td>
+           <td>AUS</td>
+           <td>799</td>
+        </tr>
+        
+        <tr class="table table-bordered">
+           <td>3</td>
+           <td> Babar Azam</td>
+           <td>PAK</td>
+           <td>786</td>
+        </tr>
+        
+        <tr class="table table-bordered">
+           <td>4</td>
+           <td>A.J. Finch</td>
+           <td>AUS</td>
+           <td>763</td>
+        </tr>
+        
+        <tr class="table table-bordered">
+           <td>5</td>
+           <td>M.J. Guptill</td>
+           <td>NZ</td>
+           <td>747</td>
+        </tr>
+        
+        <tr class="table table-bordered">
+           <td>6</td>
+           <td>V. Kohli</td>
+           <td>IND</td>
+           <td>741</td>
+        </tr>
+        
+        <tr class="table table-bordered">
+           <td>7</td>
+           <td>E. Lewis</td>
+           <td>WI</td>
+           <td>734</td>
+        </tr>
+        
+        <tr class="table table-bordered">
+           <td>8</td>
+           <td>K.L. Rahul</td>
+           <td>IND</td>
+           <td>683</td>
+        </tr>
+        
+        <tr class="table table-bordered">
+           <td>9</td>
+           <td>A.D. Hales</td>
+           <td>ENG</td>
+           <td>679</td>
+        </tr>
+        
+        <tr class="table table-bordered">
+           <td>10</td>
+           <td> Mohammad Shahzad</td>
+           <td>AFG</td>
+           <td>653</td>
+        </tr>
+        
+     </tbody>
+  </table>
+</div>
+</div>
+<div class="row">
+  <div class="col-lg-6">
+  <table class="standings-datatable table table-sm">
+     <thead class="thead-inverse">
+        <tr>
+           <th class="bg-primary text-lg-left">ICC Player Rattings</th>
+           <th class="bg-primary text-lg-left"></th>
+           <th class="bg-primary text-lg-left"></th>
+           <th class="bg-primary text-lg-right">Twenty 20 Bowlers</th>
+        </tr>
+     <thead class="thead-inverse">
+        <tr>
+           <th class=" text-lg-left">Rank</th>
+           <th class=" text-lg-left">Name</th>
+           <th class=" text-lg-left">Country</th>
+           <th class=" text-lg-left">Rating</th>
+        </tr>
+     </thead>
+     <tbody>
+        
+        <tr class="table table-bordered">
+           <td>1</td>
+           <td> Rashid Khan</td>
+           <td>AFG</td>
+           <td>759</td>
+        </tr>
+        
+        <tr class="table table-bordered">
+           <td>2</td>
+           <td>I.S. Sodhi</td>
+           <td>NZ</td>
+           <td>700</td>
+        </tr>
+        
+        <tr class="table table-bordered">
+           <td>3</td>
+           <td>S. Badree</td>
+           <td>WI</td>
+           <td>691</td>
+        </tr>
+        
+        <tr class="table table-bordered">
+           <td>4</td>
+           <td> Imad Wasim</td>
+           <td>PAK</td>
+           <td>677</td>
+        </tr>
+        
+        <tr class="table table-bordered">
+           <td>5</td>
+           <td>J.J. Bumrah</td>
+           <td>IND</td>
+           <td>674</td>
+        </tr>
+        
+        <tr class="table table-bordered">
+           <td>6</td>
+           <td>M.J. Santner</td>
+           <td>NZ</td>
+           <td>665</td>
+        </tr>
+        
+        <tr class="table table-bordered">
+           <td>7</td>
+           <td> Mustafizur Rahman</td>
+           <td>BAN</td>
+           <td>656</td>
+        </tr>
+        
+        <tr class="table table-bordered">
+           <td>8</td>
+           <td> Imran Tahir</td>
+           <td>SA</td>
+           <td>650</td>
+        </tr>
+        
+        <tr class="table table-bordered">
+           <td>9</td>
+           <td>S.P. Narine</td>
+           <td>WI</td>
+           <td>636</td>
+        </tr>
+        
+        <tr class="table table-bordered">
+           <td>10</td>
+           <td> Shakib Al Hasan</td>
+           <td>BAN</td>
+           <td>635</td>
+        </tr>
+        
+     </tbody>
+  </table>
+   </div>
+   <div class="col-lg-6">
+      <table class="standings-datatable table table-sm">
+     <thead class="thead-inverse">
+        <tr>
+           <th class="bg-primary text-lg-left">ICC Player Rattings</th>
+           <th class="bg-primary text-lg-left"></th>
+           <th class="bg-primary text-lg-left"></th>
+           <th class="bg-primary text-lg-right">Twenty20 Allrounders</th>
+        </tr>
+     <thead class="thead-inverse">
+        <tr>
+           <th class=" text-lg-left">Rank</th>
+           <th class=" text-lg-left">Name</th>
+           <th class=" text-lg-left">Country</th>
+           <th class=" text-lg-left">Rating</th>
+        </tr>
+     </thead>
+     <tbody>
+        
+        <tr class="table table-bordered">
+           <td>1</td>
+           <td>G.J. Maxwell</td>
+           <td>AUS</td>
+           <td>390</td>
+        </tr>
+        
+        <tr class="table table-bordered">
+           <td>2</td>
+           <td> Shakib Al Hasan</td>
+           <td>BAN</td>
+           <td>326</td>
+        </tr>
+        
+        <tr class="table table-bordered">
+           <td>3</td>
+           <td> Mohammad Nabi</td>
+           <td>AFG</td>
+           <td>292</td>
+        </tr>
+        
+        <tr class="table table-bordered">
+           <td>4</td>
+           <td>M.N. Samuels</td>
+           <td>WI</td>
+           <td>239</td>
+        </tr>
+        
+        <tr class="table table-bordered">
+           <td>5</td>
+           <td>J-P. Duminy</td>
+           <td>SA</td>
+           <td>235</td>
+        </tr>
+        
+        <tr class="table table-bordered">
+           <td>6</td>
+           <td> Mahmudullah</td>
+           <td>BAN</td>
+           <td>205</td>
+        </tr>
+        
+        <tr class="table table-bordered">
+           <td>7</td>
+           <td>N.L.T.C. Perera</td>
+           <td>SL</td>
+           <td>196</td>
+        </tr>
+        
+        <tr class="table table-bordered">
+           <td>8</td>
+           <td>P.R. Stirling</td>
+           <td>IRE</td>
+           <td>193</td>
+        </tr>
+        
+        <tr class="table table-bordered">
+           <td>9</td>
+           <td>K.J. O&#39;Brien</td>
+           <td>IRE</td>
+           <td>176</td>
+        </tr>
+        
+        <tr class="table table-bordered">
+           <td>10</td>
+           <td> Samiullah Shenwari</td>
+           <td>AFG</td>
+           <td>174</td>
+        </tr>
+        
+     </tbody>
+  </table>
+</div>
+</div>
+</div>
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<script src="static/javascripts/jquery.min.js" integrity="sha384-THPy051/pYDQGanwU6poAc/hOdQxjnOEXzbT+OuUAFqNqFjL+4IGLBgCJC3ZOShY" crossorigin="anonymous"></script>
+<script src="static/javascripts/tether.min.js" integrity="sha384-Plbmg8JY28KFelvJVai01l8WyZzrYWG825m+cZ0eDDS1f7d/js6ikvy1+X+guPIB" crossorigin="anonymous"></script>
+<script src="static/javascripts/bootstrap.min.js" integrity="sha384-BLiI7JTZm+JWlgKa0M0kGRpJbF2J8q+qreVrKBC47e3K6BW78kGLrCkeRX6I9RoK" crossorigin="anonymous"></script>
+
+<!-- jQuery -->
+<script src="static/javascripts/jquery-ui.js"></script>
+
+<!-- Bootstrap DataTable -->
+<!-- <link rel="stylesheet" href="https://cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css"> -->
+<script src="static/javascripts/jquery.dataTables.min.js"></script>
+<script src="static/javascripts/dataTables.bootstrap4.min.js"></script>
+
+<!-- Google Analytics -->
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-46691413-7', 'auto');
+    ga('send', 'pageview');
+</script>
+
+<script src="static/javascripts/bootstrap-table.js"></script>
+<script src="static/javascripts/datepicker.js"></script>

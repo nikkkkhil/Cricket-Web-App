@@ -1,0 +1,23 @@
+{% extends 'bootstrap/base.html' %}
+
+<!-- Navigation Bar -->
+{% block navbar %}
+	<nav class="navbar navbar-static-top navbar-dark bg-inverse">
+    <a class="navbar-brand" href="/"><img class="banner-logo" src="{{ url_for('static', filename='images/rahul-dravid-174.png') }}">The Wall</a>
+    <nav class="nav navbar-nav float-xs-left">
+        <a class="nav-item nav-link" href="/standings">Schedule</a>
+        <a class="nav-item nav-link" href="/playervsplayer">News</a>
+        <a class="nav-item nav-link" href="/teamvsteam">Series</a>
+        <a class="nav-item nav-link" href="/draftcombine/2016">Videos</a>
+    </nav>
+    <form action="/search" method="POST" class="float-xs-right">
+        <input type="text" name="searchname" class="form-control" placeholder="Search Match ...">
+    </form>
+</nav><!-- /.
+{% endblock %}
+
+<!-- Content Block -->
+{% block page_title %} {% endblock %}
+
+<!-- Content -->
+{% block content %} {% endblock %}

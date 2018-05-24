@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+{% block body %}
+<div class="container">
+       <div class="row">
+
+           <div class="col-lg-14">
+           <br>
+           <form id="dateform" action="/match" method="POST" class="form-inline text-lg-center">
+               <div class="list-group">
+                 <br></br>
+      {% if box %}
+       {% for game in box%}
+                 <a href="/Summary/{{ game['matchid']}}" class="list-group-item list-group-item-action flex-column align-items-start ">
+                   <div class="d-flex w-100 justify-content-between">
+                     <h5 class="mb-1">{{game['description']}}</h5>
+                     <small>{{game['result']}}</small>
+                   </div>
+                   <p class="mb-1">{{game['date']}}</p>
+                   <small>{{game['ground_name']}}</small>
+                 </a>
+                 <br></br>
+          {% endfor %}
+          {% else %}
+          <h3> Noscorecard available for this date :-/ try for  other date</h3 >
+          {% endif %}
+
+</form>
+
+{% endblock %}

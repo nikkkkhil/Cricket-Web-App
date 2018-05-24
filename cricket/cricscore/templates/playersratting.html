@@ -1,0 +1,187 @@
+{% extends "layout.html" %}
+{% block body %}
+<!-- Content -->
+<br></br>
+<div class="container">
+   <div class="row">
+      <div class="col-lg-6">
+<table class="standings-datatable table table-sm">
+      <thead class="thead-inverse">
+         <tr>
+            <th class="bg-primary text-lg-left">ICC Player Rattings</th>
+            <th class="bg-primary text-lg-left"></th>
+            <th class="bg-primary text-lg-left"></th>
+            <th class="bg-primary text-lg-right">ODI Batsmen</th>
+         </tr>
+      <thead class="thead-inverse">
+         <tr>
+            <th class=" text-lg-left">Rank</th>
+            <th class=" text-lg-left">Name</th>
+            <th class=" text-lg-left">Country</th>
+            <th class=" text-lg-left">Rating</th>
+         </tr>
+      </thead>
+      <tbody>
+         {% for team in batplayer_odi_ranking[:-1] %}
+         <tr class="table table-bordered">
+            <td>{{ team["Rank"]}}</td>
+            <td>{{ team['Name'] }}</td>
+            <td>{{ team['country'] }}</td>
+            <td>{{ team['Rating'] }}</td>
+         </tr>
+         {% endfor %}
+      </tbody>
+   </table>
+ </div>
+ <div class="col-lg-6">
+            <table class="standings-datatable table table-sm">
+      <thead class="thead-inverse">
+         <tr>
+            <th class="bg-primary text-lg-left">ICC Player Rattings</th>
+            <th class="bg-primary text-lg-left"></th>
+            <th class="bg-primary text-lg-left"></th>
+            <th class="bg-primary text-lg-right">ODI Bowlers</th>
+         </tr>
+      <thead class="thead-inverse">
+         <tr>
+            <th class=" text-lg-left">Rank</th>
+            <th class=" text-lg-left">Name</th>
+            <th class=" text-lg-left">Country</th>
+            <th class=" text-lg-left">Rating</th>
+         </tr>
+      </thead>
+      <tbody>
+         {% for team in bowlplayer_odi_ranking[:-1] %}
+         <tr class="table table-bordered">
+            <td>{{ team["Rank"]}}</td>
+            <td>{{ team['Name'] }}</td>
+            <td>{{ team['country'] }}</td>
+            <td>{{ team['Rating'] }}</td>
+         </tr>
+         {% endfor %}
+      </tbody>
+   </table>
+ </div>
+</div>
+<div class="row">
+<div class="col-lg-6">
+ <table class="standings-datatable table table-sm">
+    <thead class="thead-inverse">
+       <tr>
+          <th class="bg-primary text-lg-left">ICC Player Rattings</th>
+          <th class="bg-primary text-lg-left"></th>
+          <th class="bg-primary text-lg-left"></th>
+          <th class="bg-primary text-lg-right">ODI Allrounders</th>
+       </tr>
+    <thead class="thead-inverse">
+       <tr>
+          <th class=" text-lg-left">Rank</th>
+          <th class=" text-lg-left">Name</th>
+          <th class=" text-lg-left">Country</th>
+          <th class=" text-lg-left">Rating</th>
+       </tr>
+    </thead>
+     <tbody>
+             {% for team in allplayer_odi_ranking[:-1] %}
+             <tr class="table table-bordered">
+                <td>{{ team["Rank"]}}</td>
+                <td>{{ team['Name'] }}</td>
+                <td>{{ team['country'] }}</td>
+                <td>{{ team['Rating'] }}</td>
+             </tr>
+             {% endfor %}
+          </tbody>
+       </table>
+     </div>
+      <div class="col-lg-6">
+       <table class="standings-datatable table table-sm">
+          <thead class="thead-inverse">
+             <tr>
+                <th class="bg-primary text-lg-left">ICC Player Rattings</th>
+                <th class="bg-primary text-lg-left"></th>
+                <th class="bg-primary text-lg-left"></th>
+                <th class="bg-primary text-lg-right">Twenty20 Batsmen</th>
+             </tr>
+          <thead class="thead-inverse">
+        <tr>
+           <th class=" text-lg-left">Rank</th>
+           <th class=" text-lg-left">Name</th>
+           <th class=" text-lg-left">Country</th>
+           <th class=" text-lg-left">Rating</th>
+        </tr>
+     </thead>
+     <tbody>
+        {% for team in batplayer_t20_ranking[:-1] %}
+        <tr class="table table-bordered">
+           <td>{{ team["Rank"]}}</td>
+           <td>{{ team['Name'] }}</td>
+           <td>{{ team['country'] }}</td>
+           <td>{{ team['Rating'] }}</td>
+        </tr>
+        {% endfor %}
+     </tbody>
+  </table>
+</div>
+</div>
+<div class="row">
+  <div class="col-lg-6">
+  <table class="standings-datatable table table-sm">
+     <thead class="thead-inverse">
+        <tr>
+           <th class="bg-primary text-lg-left">ICC Player Rattings</th>
+           <th class="bg-primary text-lg-left"></th>
+           <th class="bg-primary text-lg-left"></th>
+           <th class="bg-primary text-lg-right">Twenty 20 Bowlers</th>
+        </tr>
+     <thead class="thead-inverse">
+        <tr>
+           <th class=" text-lg-left">Rank</th>
+           <th class=" text-lg-left">Name</th>
+           <th class=" text-lg-left">Country</th>
+           <th class=" text-lg-left">Rating</th>
+        </tr>
+     </thead>
+     <tbody>
+        {% for team in bowlplayer_t20_ranking[:-1] %}
+        <tr class="table table-bordered">
+           <td>{{ team["Rank"]}}</td>
+           <td>{{ team['Name'] }}</td>
+           <td>{{ team['country'] }}</td>
+           <td>{{ team['Rating'] }}</td>
+        </tr>
+        {% endfor %}
+     </tbody>
+  </table>
+   </div>
+   <div class="col-lg-6">
+      <table class="standings-datatable table table-sm">
+     <thead class="thead-inverse">
+        <tr>
+           <th class="bg-primary text-lg-left">ICC Player Rattings</th>
+           <th class="bg-primary text-lg-left"></th>
+           <th class="bg-primary text-lg-left"></th>
+           <th class="bg-primary text-lg-right">Twenty20 Allrounders</th>
+        </tr>
+     <thead class="thead-inverse">
+        <tr>
+           <th class=" text-lg-left">Rank</th>
+           <th class=" text-lg-left">Name</th>
+           <th class=" text-lg-left">Country</th>
+           <th class=" text-lg-left">Rating</th>
+        </tr>
+     </thead>
+     <tbody>
+        {% for team in allplayer_t20_ranking[:-1] %}
+        <tr class="table table-bordered">
+           <td>{{ team["Rank"]}}</td>
+           <td>{{ team['Name'] }}</td>
+           <td>{{ team['country'] }}</td>
+           <td>{{ team['Rating'] }}</td>
+        </tr>
+        {% endfor %}
+     </tbody>
+  </table>
+</div>
+</div>
+</div>
+{% endblock %}

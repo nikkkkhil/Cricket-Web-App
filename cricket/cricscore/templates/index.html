@@ -1,0 +1,229 @@
+{% extends "layout.html" %}
+{% block body %}
+<!-- Content -->
+<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+<div id="content">{{ index }}</div> {# this is the original system_info passed in from the root view #}
+
+<script>
+setInterval(function() {
+    // load the data from your endpoint into the div
+    $("#content").getJSON("/sys_info.json", function (data) {
+       $.each(data, function (_, element) {
+         $('.list-group').append('<div>' + elment['runs10'] + '</div>)';
+       });
+    })
+},1000)
+{{"runs10"}}
+</script>
+<div class="container">
+   <div class="row">
+      <div class="col-lg-6">
+         <br></br>
+         <form id="dateform" action="/match" method="POST" class="form-inline text-lg-center">
+            <input type="text" name="date" id="datepicker" class="form-control form-control-lg" style="font-family:Helvetica, FontAwesome" placeholder="&#xf073 previous matches &nbsp;{{ pretty_today }}">
+            &nbsp;
+         </form>
+         <div class="list-group">
+            {% for  game in gamest %}
+            <a class="score-size text-xs-center nounderline list-group-item list-group-item-action" >
+               <div class="row">
+                  <div class="col-xs-4">
+                     {% if game["Batting_team_img"] %}
+                     <img class="team-logo" src="/static/{{ game["Batting_team_img"] }}">
+                     {% endif %}
+                     {{ game["Batting team"] }}  {{ game["runs10"] }}
+                     </b>
+                     <br>
+                     {{ game["wickets10"] }}
+                  </div>
+                  <div class="col-xs-4 broadcast-column">
+                     {% if game["live_img"] %}
+                     <img class="team-logo" src="/static/{{ game["live_img"] }}">
+                     {% endif %}
+                     <div class="final-text">
+                        {{ game["status2"]  }}
+                     </div>
+                     <div class="broadcaster">
+                        {{ game["series2"]  }}
+                     </div>
+                  </div>
+                  <div class="col-xs-4">
+                     {% if game["Bowling_team_img"] %}
+                     <img class="team-logo" src="/static/{{ game["Bowling_team_img"] }}">
+                     {% endif %}
+                     {{ game["Bowling team"] }} {{ game["runs20"] }}
+                     </b>
+                     <br>
+                     {{ game["wickets20"] }}
+                  </div>
+               </div>
+            </a>
+            {% endfor %}
+         </div>
+      </div>
+
+
+
+
+<br></br>
+<br></br>
+
+
+      <div class="col-lg-6">
+         <br>
+         <blockquote class="reddit-card" data-card-preview="0"><a href="https://reddit.com{{ hot_Cricket_posts[0].permalink }}?ref=share&ref_source=embed">{{ hot_Cricket_posts[0].title }}</a> from <a href="http://www.reddit.com/r/nba">Cricket</a></blockquote>
+         <script async src="//embed.redditmedia.com/widgets/platform.js" charset="UTF-8"></script>
+         <br>
+         <!-- Reddit -->
+         <div class="col-lg-6">
+            {% for i in range(1, 8, 2) %}
+            <a class="reddit-boxes nounderline list-group-item list-group-item-action" href="https://reddit.com{{ hot_Cricket_posts[i].permalink }}">
+            {{ hot_Cricket_posts[i].title }} <img class="team-logo" src="/static/images/reddit.png">
+            </a>
+            <br>
+            {% endfor %}
+         </div>
+         <div class="col-lg-6">
+            {% for i in range(2, 9, 2) %}
+            <a class="reddit-boxes nounderline list-group-item list-group-item-action" href="https://reddit.com{{ hot_Cricket_posts[i].permalink }}">
+            {{ hot_Cricket_posts[i].title }} <img class="team-logo" src="/static/images/reddit.png">
+            </a>
+            <br>
+            {% endfor %}
+         </div>
+      </div>
+   </div>
+<br></br>
+<div class="row">
+    {% for game in gamest %}
+       <div class="col-lg-3">
+                <div class="card  ">
+                  <div class="card-block">
+                    <div class="text-xs-center">
+                      <ul class="pagination">
+                        {% if game["live_img"] %}
+                        <img class="team-logo" src="/static/{{ game["live_img"] }}">
+                        {% endif %}
+                    <p class="card-title"><b>{{ game['status2'] }}</b></p>
+                    <p class="card-title">{{ game['matchtype2'] }}</p>
+                    <p class="card-title">{{ game['teams2'] }}</p>
+                    {% if game['Batting team'] %}
+                    {% if game["Batting_team_img"] %}
+                    <img class="team-logo" src="/static/{{ game["Batting_team_img"] }}"><p class="card-text">{{ game['Batting team'] }}<b>{{" "}}{{ game['runs10'] }}/{{ game['wickets10'] }}{{" "}}({{ game['overs10'] }}{{" "}}ov)</b></p>
+                                        {% endif %}
+                    {% endif %}
+                    <p class="card-text">{{ game['name1'] }}{{" "}}<b>{{ game['runs1'] }}</b></p>
+                    <p class="card-text">{{ game['name2'] }}{{" "}}<b>{{ game['runs2'] }}</b></p>
+                    {% if game["Bowling_team_img"] %}
+                    <img class="team-logo" src="/static/{{ game["Bowling_team_img"] }}">
+                    {% endif %}
+                    {% if game['name5'] %}
+                    <p class="card-text">{{ game['name5'] }}{{" "}}<b>({{ game['wickets5'] }}{{" "}}w)</b></p>
+                    {% endif %}
+                  </ul>
+                </div>
+                <div class="btn-group pull-right row">
+                  <div class="col-md-4"><a href="/Scorecard/{{ game["scorecardid"]}}" class="btn btn-primary btn-sm">Scorecard</a></div>
+                  <div class="col-md-1"></div>
+                  <div class="col-md-4"><a href="/Commentary/{{ game["commentaryid"]}}" class="btn btn-primary btn-sm">Commentary</a></div>
+                   </div>
+                  </div>
+             </div>
+      </div>
+      {% endfor %}
+</div>
+<br></br>
+<div class="row">
+   <div class="col-lg-6">
+      <table class="standings-datatable table table-sm">
+         <thead class="thead-inverse">
+            <tr>
+               <th class="bg-primary text-lg-left">{{odi_ranking_table[12]['date-updated']}} </th>
+               <th class="bg-primary text-lg-left"></th>
+               <th class="bg-primary text-lg-left"></th>
+               <th class="bg-primary text-lg-right">{{odi_ranking_table[12]['match-type']}}</th>
+            </tr>
+         </thead>
+         <thead class="thead-inverse">
+            <tr>
+               <th class=" text-lg-left">TEAM</th>
+               <th class=" text-lg-left">Matches</th>
+               <th class=" text-lg-left">Points</th>
+               <th class=" text-lg-left">Rating</th>
+            </tr>
+         </thead>
+<tbody>
+{% for team in odi_ranking_table[:-1] %}
+<tr class="table table-bordered">
+  {% if team["Team"] %}
+  <td><img class="team-logo" src= "/static/{{team["image"] }}">{{ team["Team"]}}</td>
+                 {% endif %}
+<td>{{ team['Matches'] }}</td>
+<td>{{ team['points'] }}</td>
+<td>{{ team['Rating'] }}</td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+</div>
+<div class="col-lg-6">
+<table class="standings-datatable table table-sm">
+<thead class="thead-inverse">
+<tr>
+<th class="bg-primary text-lg-left">ICC Player Rattings</th>
+<th class="bg-primary text-lg-left"></th>
+<th class="bg-primary text-lg-left"></th>
+<th class="bg-primary text-lg-right">ODI Batsmen</th>
+</tr>
+<thead class="thead-inverse">
+<tr>
+<th class=" text-lg-left">Rank</th>
+<th class=" text-lg-left">Name</th>
+<th class=" text-lg-left">Country</th>
+<th class=" text-lg-left">Rating</th>
+</tr>
+</thead>
+<tbody>
+{% for team in batplayer_odi_ranking[:-1] %}
+<tr class="table table-bordered">
+<td>{{ team["Rank"]}}</td>
+{% if team["Name"] %}
+<td><img class="team-logo" src= "/static/{{team["image"] }}">{{ team["Name"]}}</td>
+               {% endif %}
+<td>{{ team['country'] }}</td>
+<td>{{ team['Rating'] }}</td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+<br>
+</div>
+</div>
+<br></br>
+<div class="row">
+  <div class="col-lg-6">
+  {% if youtube_url %}
+  <div class="embed-responsive embed-responsive-16by9">
+  <iframe class="embed-responsive-item" src="{{ youtube_url }}"></iframe>
+  </div>
+  {% endif %}
+  <br></br>
+</div>
+<div class="col-lg-6">
+{% if youtube_url1 %}
+<div class="embed-responsive embed-responsive-16by9">
+<iframe class="embed-responsive-item" src="{{ youtube_url1 }}"></iframe>
+</div>
+{% endif %}
+</div>
+</div>
+<br></br>
+<div class="row">
+   <div class="col-lg-6">
+      <a class="twitter-timeline" href="https://twitter.com/nikilr14/lists/hot-cric-tweets?ref_src=twsrc%5Etfw"data-aria-polite="assertive"data-chrome="noheader nofooter noborders scrollbar"data-width="500"
+         data-height="500"></a>
+      <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+   </div>
+   </br>
+</div>
+{% endblock %}
