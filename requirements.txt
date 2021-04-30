@@ -27,7 +27,7 @@ python-espncricinfo==0.3.1
 pytz==2018.3
 regex==2018.2.8
 requests==2.18.4
-rsa==3.4.2
+rsa==4.7
 six==1.11.0
 tzlocal==1.5.1
 update-checker==0.16
